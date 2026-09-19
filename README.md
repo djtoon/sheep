@@ -35,8 +35,9 @@ dependencies, so `npm install` is only needed for the dev tools (Playwright scre
 | Drop through a bridge | Down + Jump | Down + A | D-pad down + JUMP |
 | Start / pause | Enter or Esc | Start | II button |
 
-**Mobile:** on phones and tablets the game shows on-screen controls, and asks you to rotate to landscape if you hold the device upright (the game pauses until you do).
-Tap the screen to start, and tap FIRE or JUMP to turn comic pages. The first touch also tries to go fullscreen.
+**Mobile:** on phones and tablets the game opens with a **TAP TO PLAY** screen. The tap switches to fullscreen, locks landscape where the browser allows it (not iPhone Safari) and unlocks audio.
+The pixel-art on-screen controls are a D-pad, JUMP, FIRE, pause, and a fullscreen button that appears if you leave fullscreen. Holding the device upright shows a rotate-to-landscape screen, and the game pauses until you turn it.
+Tap FIRE or JUMP to turn comic pages. Add `?gate=0` to skip the tap-to-play screen.
 Add `?touch=1` to force the touch controls on a desktop browser, or `?touch=0` to hide them.
 
 On the title screen, Enter, X or Z starts the game. Press Start during play to pause.
