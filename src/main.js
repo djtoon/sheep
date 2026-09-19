@@ -4,6 +4,7 @@ import { Game } from './scenes/Game.js';
 import { HUD } from './scenes/HUD.js';
 import { Intro } from './scenes/Intro.js';
 import { Ending } from './scenes/Ending.js';
+import { initTouch } from './touch.js';
 
 export const W = 480, H = 270;
 const q = new URLSearchParams(location.search);
@@ -44,3 +45,4 @@ const game = new Phaser.Game({
   scene: [Boot, Title, Intro, Game, HUD, Ending],
 });
 window.__sheep.game = game;
+initTouch(game);   // mobile: on-screen buttons + rotate-to-landscape screen

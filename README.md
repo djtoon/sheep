@@ -26,14 +26,18 @@ dependencies, so `npm install` is only needed for the dev tools (Playwright scre
 
 ## Controls
 
-| Action | Keyboard | Gamepad |
-|---|---|---|
-| Move / aim (8-way) | Arrow keys or WASD | Left stick / D-pad |
-| Jump | Z, K or Space | A |
-| Fire | X or J | X / B / R2 |
-| Prone | Down (standing still) | Down |
-| Drop through a bridge | Down + Jump | Down + A |
-| Start / pause | Enter or Esc | Start |
+| Action | Keyboard | Gamepad | Touch |
+|---|---|---|---|
+| Move / aim (8-way) | Arrow keys or WASD | Left stick / D-pad | On-screen D-pad (slide for diagonals) |
+| Jump | Z, K or Space | A | JUMP |
+| Fire | X or J | X / B / R2 | FIRE |
+| Prone | Down (standing still) | Down | D-pad down |
+| Drop through a bridge | Down + Jump | Down + A | D-pad down + JUMP |
+| Start / pause | Enter or Esc | Start | II button |
+
+**Mobile:** on phones and tablets the game shows on-screen controls, and asks you to rotate to landscape if you hold the device upright (the game pauses until you do).
+Tap the screen to start, and tap FIRE or JUMP to turn comic pages. The first touch also tries to go fullscreen.
+Add `?touch=1` to force the touch controls on a desktop browser, or `?touch=0` to hide them.
 
 On the title screen, Enter, X or Z starts the game. Press Start during play to pause.
 When you run out of lives you get a 9-second **CONTINUE?** countdown. Press Start to continue on the spot with 3 lives, but your score is reset.
