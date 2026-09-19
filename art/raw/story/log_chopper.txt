@@ -1,0 +1,2 @@
+art/raw/story/chopper_1.png
+art/raw/story/chopper_2.png

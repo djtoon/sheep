@@ -1,0 +1,2 @@
+art/raw/stage2/compound_1.png
+art/raw/stage2/compound_2.png

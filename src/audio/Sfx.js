@@ -4,7 +4,10 @@
 //
 //   const sfx = new Sfx(scene);  sfx.play(name, vol = 1)
 //   names: shoot (auto-switches to shoot-m while the player holds the M gun), shoot-m, spread, laser, enemy-shot, hit,
-//          enemy-die, boom, boom-big, jump, land, pickup, die, capsule, select, start, pause, telegraph, count, extralife, powerup
+//          enemy-die, boom, boom-big, jump, land, pickup, die, capsule, select, start, pause, telegraph, count, extralife, powerup,
+//          shotgun, ricochet, sniper-charge, sniper, tank, gatling-spin, gatling, laser-bolt, flame, xeno-screech, xeno-pounce,
+//          mutant-roar, goo, glass, queen-roar, rotor, thump, page, phone
+//   sfx.loop('rotor' | 'flame' | 'phone', vol) -> handle.stop(ms);  sfx.stopLoop(name, ms);  loops stop on scene shutdown
 //
 // In the Game scene the constructor also wires the soundtrack to events Game already emits
 // (stage music on create, 'boss' -> WARNING then boss theme, 'cleared' -> stage-clear jingle, 'gameover' -> game-over jingle)
@@ -15,9 +18,14 @@ import { Music, audioBus, fadeKill } from './Music.js';
 
 const VOICES = { shoot: 3, 'shoot-m': 3, spread: 3, laser: 2, 'enemy-shot': 4, hit: 3, 'enemy-die': 4, boom: 4, 'boom-big': 3,
   jump: 1, land: 1, pickup: 1, die: 1, capsule: 2, select: 1, start: 1,
-  pause: 1, telegraph: 2, count: 1, extralife: 1, powerup: 1 };
-const JITTER = { shoot: 0.03, 'shoot-m': 0.05, spread: 0.02, 'enemy-shot': 0.04, hit: 0.06, 'enemy-die': 0.06, boom: 0.05, capsule: 0.03, land: 0.05, telegraph: 0.04 };
-const MIN_GAP = { hit: 40, 'enemy-shot': 45, boom: 50, telegraph: 110, land: 80 }; // ms; everything else 30
+  pause: 1, telegraph: 2, count: 1, extralife: 1, powerup: 1,
+  // campaign enemies / bosses / story
+  shotgun: 3, ricochet: 3, 'sniper-charge': 2, sniper: 2, tank: 2, 'gatling-spin': 2, gatling: 2, 'laser-bolt': 4, flame: 2,
+  'xeno-screech': 3, 'xeno-pounce': 3, 'mutant-roar': 2, goo: 4, glass: 3, 'queen-roar': 1, rotor: 1, thump: 2, page: 1, phone: 1 };
+const JITTER = { shoot: 0.03, 'shoot-m': 0.05, spread: 0.02, 'enemy-shot': 0.04, hit: 0.06, 'enemy-die': 0.06, boom: 0.05, capsule: 0.03, land: 0.05, telegraph: 0.04,
+  shotgun: 0.03, ricochet: 0.08, sniper: 0.02, tank: 0.03, gatling: 0.02, 'laser-bolt': 0.05, 'xeno-screech': 0.08, 'xeno-pounce': 0.06,
+  'mutant-roar': 0.05, goo: 0.1, glass: 0.06, thump: 0.05 };
+const MIN_GAP = { hit: 40, 'enemy-shot': 45, boom: 50, telegraph: 110, land: 80, ricochet: 60, 'laser-bolt': 45, goo: 50, 'xeno-screech': 120, 'mutant-roar': 250, 'queen-roar': 400 }; // ms; everything else 30
 
 export class Sfx {
   constructor(scene) {
@@ -25,6 +33,8 @@ export class Sfx {
     this.bus = audioBus(scene);
     this.last = {};
     this.active = {};
+    this.loops = {};
+    scene.events.once('shutdown', () => this.stopAll(60));
     if (Sfx.AUTO_WIRE && scene.sys.settings.key === 'Game') this.wireGame(scene);
   }
 
@@ -51,12 +61,29 @@ export class Sfx {
     src.start();
   }
 
+  // looping sfx (rotor, flame, phone): start once, keep the handle; calling again while it runs just updates volume
+  loop(name, vol = 1) {
+    const b = this.bus, key = 'sfx-' + name, sc = this.scene;
+    if (this.loops[name]) { this.loops[name].g.gain.setTargetAtTime(vol, b.ctx.currentTime, 0.05); return this.loops[name]; }
+    if (!b || !sc.cache.audio.exists(key) || b.ctx.state !== 'running') return null;
+    const buf = sc.cache.audio.get(key); if (!buf || !buf.getChannelData) return null;
+    const src = b.ctx.createBufferSource(), g = b.ctx.createGain(), t = b.ctx.currentTime;
+    src.buffer = buf; src.loop = true;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(vol, 0.0002), t + 0.06);
+    src.connect(g).connect(b.sfx); src.start();
+    const h = { src, g, stop: (ms = 150) => this.stopLoop(name, ms) };
+    return (this.loops[name] = h);
+  }
+  stopLoop(name, ms = 150) { const h = this.loops[name]; if (!h) return; delete this.loops[name]; fadeKill(h.src, h.g, ms); }
+  stopAll(ms = 60) { Object.keys(this.loops).forEach(n => this.stopLoop(n, ms)); }
+
   wireGame(scene) {
     const ev = scene.events, on = [];
     const hook = (name, fn) => { ev.on(name, fn); on.push([name, fn]); };
-    const stageTrack = () => (scene.boss && !scene.cleared ? 'boss' : 'stage' + (scene.stageNo || 1));
+    const N = scene.stageNo || 1, bossTrack = N === 1 ? 'boss' : 'boss' + N;
+    const stageTrack = () => (scene.boss && !scene.cleared ? bossTrack : 'stage' + N);
     Music.play(scene, stageTrack());
-    hook('boss', () => Music.sting(scene, 'warning', { then: 'boss' }));
+    hook('boss', () => Music.sting(scene, 'warning', { then: bossTrack }));
     hook('cleared', () => Music.sting(scene, 'clear'));            // also covers 'stage-end' (it fires ~7 s later, after the jingle)
     hook('gameover', () => Music.sting(scene, 'gameover'));
     hook('continue-tick', n => this.play('count', n <= 3 ? 1 : 0.75));

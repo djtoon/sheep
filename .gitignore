@@ -11,3 +11,4 @@ art/raw/**/*.jpg
 art/raw/**/*.npy
 art/raw/**/*.wav
 art/raw/**/*.mp4
+__pycache__/

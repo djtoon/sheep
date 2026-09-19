@@ -45,3 +45,19 @@ Put raw generations under `art/raw/<piece>/` and final game art under `assets/<p
 ## Definition of done
 There isn't one. You work a round, produce real in-game screenshots, and report. A separate blind critic then compares your frame with the mockup, and the single biggest gap comes back to you.
 Never report "looks great". Report what you changed and the exact screenshot paths.
+
+## Campaign expansion: stages 2 and 3, story intro
+New bars: `ref/levels/level2.png` (STAGE 02, the night military base B-02), `ref/levels/level3.png` (STAGE 03, underground secret lab, SUB-LEVEL B), `ref/levels/enemy1.png` (the stage-2 enemy roster), and `ref/levels/enemy2.png` (the stage-3 roster).
+Stage 1 is DONE and frozen. Don't change stage-1 files unless the lead asks you to.
+
+Plug-in points (each file has exactly one owner):
+| What | File(s) | Registry |
+|---|---|---|
+| stage data (geometry, decor, theme, boss x/type) | `src/level/stageN/stageN.js` | `src/level/stages.js` |
+| stage spawns | `src/level/stageN/spawnsN.js` (game-feel builder) | imported by stageN.js |
+| stage renderer (backdrop + terrain) | `src/level/stageN/ViewN.js`, same interface as LevelView: `new V(scene, level)`, `update(cam)` | `src/level/views.js` by `level.theme` ('base', 'lab') |
+| enemies | `src/entities/roster2.js`, `roster3.js`, exporting `{ type: Class }` | `src/entities/rosters.js` (spawn `type` names) |
+| bosses | `src/entities/Boss2.js` / `Boss3.js`, with the BossWall interface | `src/entities/bosses.js` by `level.boss.type` |
+| story | `src/scenes/Intro.js`, `src/scenes/Ending.js`, `src/fx/dropin.js` | Title → Intro → Game(stage 1, drop) ... results → next stage (drop) → after stage 3, Ending |
+| art | `assets/<piece>/`, registered in `assets/parts/{stage2,stage3,roster2,roster3,boss2,boss3,story}.json` (already in the manifest) | |
+Test flags: `?stage=2|3`, `?scene=intro|ending`, `?drop=1`. Score and lives carry across stages.

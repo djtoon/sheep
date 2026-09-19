@@ -57,6 +57,31 @@
   },
   {
    "type": "audio",
+   "key": "sfx-flame",
+   "url": "assets/audio/sfx-flame.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-gatling",
+   "url": "assets/audio/sfx-gatling.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-gatling-spin",
+   "url": "assets/audio/sfx-gatling-spin.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-glass",
+   "url": "assets/audio/sfx-glass.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-goo",
+   "url": "assets/audio/sfx-goo.ogg"
+  },
+  {
+   "type": "audio",
    "key": "sfx-hit",
    "url": "assets/audio/sfx-hit.ogg"
   },
@@ -77,8 +102,28 @@
   },
   {
    "type": "audio",
+   "key": "sfx-laser-bolt",
+   "url": "assets/audio/sfx-laser-bolt.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-mutant-roar",
+   "url": "assets/audio/sfx-mutant-roar.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-page",
+   "url": "assets/audio/sfx-page.ogg"
+  },
+  {
+   "type": "audio",
    "key": "sfx-pause",
    "url": "assets/audio/sfx-pause.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-phone",
+   "url": "assets/audio/sfx-phone.ogg"
   },
   {
    "type": "audio",
@@ -89,6 +134,21 @@
    "type": "audio",
    "key": "sfx-powerup",
    "url": "assets/audio/sfx-powerup.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-queen-roar",
+   "url": "assets/audio/sfx-queen-roar.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-ricochet",
+   "url": "assets/audio/sfx-ricochet.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-rotor",
+   "url": "assets/audio/sfx-rotor.ogg"
   },
   {
    "type": "audio",
@@ -107,6 +167,21 @@
   },
   {
    "type": "audio",
+   "key": "sfx-shotgun",
+   "url": "assets/audio/sfx-shotgun.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-sniper",
+   "url": "assets/audio/sfx-sniper.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-sniper-charge",
+   "url": "assets/audio/sfx-sniper-charge.ogg"
+  },
+  {
+   "type": "audio",
    "key": "sfx-spread",
    "url": "assets/audio/sfx-spread.ogg"
   },
@@ -117,8 +192,28 @@
   },
   {
    "type": "audio",
+   "key": "sfx-tank",
+   "url": "assets/audio/sfx-tank.ogg"
+  },
+  {
+   "type": "audio",
    "key": "sfx-telegraph",
    "url": "assets/audio/sfx-telegraph.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-thump",
+   "url": "assets/audio/sfx-thump.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-xeno-pounce",
+   "url": "assets/audio/sfx-xeno-pounce.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-xeno-screech",
+   "url": "assets/audio/sfx-xeno-screech.ogg"
   },
   {
    "type": "audio",

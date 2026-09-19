@@ -194,3 +194,69 @@ Boss death → STAGE CLEAR card → 3.2 s → the sheep runs off into the base �
 | deaths per run | 1 | 1-2 (cliff turret at 1880 ×2, drones around 2150-2370 ×4, drone at 3417, turret at 3440). **0 in the final push** |
 | kills per run | ~110-117 | ~121-129 |
 | whole stage: frames with no enemy and no enemy bullet | 37-39% | 38-39% |
+
+---
+# Campaign: stages 2 and 3 (spawns, pacing, difficulty ramp)
+
+Spawn lists: `src/level/stage2/spawns2.js` and `src/level/stage3/spawns3.js`.
+- Each new enemy is introduced alone first (stream paused, then resumed about 1.5-2 s later), then mixed in.
+- Mid-stage set-pieces with a camera hold (`lock: true, lockAt`): the mech in stage 2 at 2950 (hold at 2480), the walker in stage 3 at 3020 (hold at 2560). The stream pauses during the set-piece and resumes after.
+- Capsules: stage 2 M 1100, S 2380 (before the mech), S 4300 (before the final push). Stage 3 M 1100, S 2240 (before the walker), L 3160, S 4080.
+- Per-stage knobs on the spawn array: `gunnersFrom` (grunts shoot from the start), `shotGap` (stage 1 350 ms, stage 2 250 ms, stage 3 150 ms, for stage-1-type shooters) and `gunnerBias` (stage 2 +25%, stage 3 +55% of stream grunts stop to shoot).
+
+Game.js support:
+- Roster spawns can enter from the left (`side: 'L'`, or `'LR'` alternating) and never appear within 60 px of the sheep.
+- Ground-unit spawns retry until nothing stands within 32 px of the spawn point. Stages 2 and 3 also ease apart same-floor walkers that get closer than one body width (the unit farther from the sheep gives way). Stage 1 is untouched.
+- Set-pieces take at most 2 pellets of one spread volley, so point-blank S no longer erases a mini-boss in 2 s.
+- Drop-in: `flow = 'drop'` while `scene.dropping`, which means no scripted spawns, no stream and no enemy fire (every canFire needs `flow === 'play'`). `dropDone()` switches to 'play'. Test: `?stage=2&drop=1` shows 0 enemies and 0 enemy shots during the drop, then enemies arrive.
+
+## Difficulty (average-player bot, no god, 4 lives, each stage from a fresh start)
+| | before (placeholder = stage-1 list) | stage 1 (frozen) | stage 2 | stage 3 |
+|---|---|---|---|---|
+| reached the boss | - | **5/5** | **8/10 (80%)** (target 60-80%) | **5/10 (50%)** (target 40-60%) |
+| mean deaths per run | - | 1.2 | 2.4 | 3.6 |
+| where they die | - | turret at 3440, drone at 2147 | gunner grunts at 1800 and 4350-5100, shield intro at 1660, rifleman at 5120, tank at 5260 | walker-room gunners at 2870-3000, clawbots at 3415/3830, hazmats at 4435/4780, the gunner-heavy final push at 4700-5150 |
+| god run: frames with no enemy and no enemy bullet | 55% / 46% (first drafts) | 38-39% | **42%** | **27%** |
+| god run: time to boss | | 54 s | 56 s | 55 s |
+| ground units closer than 24 px (frames, god run) | | n/a | 4 of 3360 (transient, worst 5.8 px) | 0 of 3330 (worst 26.7 px) |
+
+Bot changes this round:
+- It jumps over shields and shoots down into them.
+- It goes prone under the walker's beam.
+- It holds about 70-120 px off big units (tank, mech, mutant, walker) instead of walking into them.
+
+I re-measured stage 1 with the updated bot: still 5/5, 1-2 deaths.
+
+Set-piece time-to-kill (god mode, bot):
+- mech: 2.5 s with S (cap 2 pellets per volley), 15.6 s with M, not finished in 35 s with R
+- walker: 2.2 s with S, 3.2 s with M, 10.5 s with R
+
+I suggest the roster owners raise the mech and walker to about 60-70 HP so the set-piece lasts 4-6 s with S.
+
+## Follow-up: set-piece balance across weapons, stream spacing
+- **Set-piece damage budget** (Game.js; the spawn entry sets `hp: 44, dpsCap: 7`):
+  - at most 7 damage per rolling second;
+  - the rifle deals double damage to set-pieces;
+  - still at most 2 pellets per spread volley;
+  - point-blank shots now count (the gap between the sheep and the muzzle is swept);
+  - set-pieces are never shoved by the anti-stacking separation and are clamped inside the held screen (a soldier push had moved the mech off screen, where it could not be hit).
+- **Clean time-to-kill**, god mode, sheep standing 150 px away with fire held:
+
+  | | S | M | L | R |
+  |---|---|---|---|---|
+  | mech (stage 2) | 7.0 s | 6.6 s | 7.5 s | 6.7 s |
+  | walker (stage 3) | 6.8 s | 6.5 s | 7.4 s | 6.5 s |
+
+  Before: mech 2.5 s with S and never with R in 35 s.
+- **Stream spacing** (stages 2+): an edge-spawned stream soldier now waits if *any* ground unit is within 32 px of the entry point. God-run frames with two ground units under 24 px apart: stage 2 **0/3540** (was 4/3360), stage 3 0/3510.
+- **Bot:**
+  - stands off any big unit within 130 px (backing up would turn it around);
+  - reads the mech tell (high stream → prone and stays down until the stream has passed, low stream → jump);
+  - only goes prone for the walker beam when on the walker's floor.
+
+| no-god bot, 10 runs | stage 1 (5 runs) | stage 2 | stage 3 |
+|---|---|---|---|
+| reached the boss | 5/5 (1-2 deaths) | **6/10 (60%)** | **5/10 (50%)** + 1 run stalled at 200 s (the bot stuck on the catwalk above the walker, unable to aim down at it; not counted as reached) |
+| mean deaths | 1.6 | 2.1 | 2.9 |
+
+Stage 2 knobs were eased once the mech became a real fight: `shotGap` back to 350, `gunnerBias` 0.1, and the rear trooper plus the left/right wave in front of the mech lock removed.

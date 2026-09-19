@@ -26,6 +26,7 @@ export class HUD extends Phaser.Scene {
   create() {
     const g = this.g, W = this.scale.width;
     this.cameras.main.roundPixels = true;
+    if (g.dropping) this.cameras.main.fadeIn(400, 0, 0, 0);   // stage entry: fades in with the Game camera (goNext / Intro fade out over 300-400 ms)
 
     // ---- left cluster
     this.add.image(4, 3, 'hud-portrait').setOrigin(0, 0);
@@ -69,7 +70,9 @@ export class HUD extends Phaser.Scene {
 
     // stage intro card (skipped when the test harness jumps into the middle of the level)
     const q = window.__sheep.query;
-    if (!q.get('x') && !q.get('nointro')) this.card(g.level.name, 'hud-big-steel', 'JUNGLE ASSAULT', 2200, false, CARD_TOP);
+    // with a drop-in the card waits for the landing (~2 s): the band would otherwise hide the chopper / ceiling hatch
+    const intro = () => this.card(g.level.name, 'hud-big-steel', (g.level.subtitle || 'JUNGLE ASSAULT'), 2200, false, CARD_TOP);
+    if (!q.get('x') && !q.get('nointro')) { if (g.dropping) this.bannerEvents.push(this.time.delayedCall(2000, intro)); else intro(); }
   }
 
   update() {

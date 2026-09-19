@@ -1,4 +1,4 @@
-until done after 61 s game time
-trace art/raw/feel/run_live3.json 122
-print {"deaths":["2149:bullet:Drone@2199,72","3417:bullet:Drone@3480,80"],"kills":121,"flow":"play","t":63}
-stats {"fps":56,"scene":["Game","HUD"],"t":62965,"player":{"x":5165,"y":168,"vx":100,"vy":0,"lives":1,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4988,"enemies":0,"onscreen":0,"pShots":17,"eShots":0,"score":17600,"kills":121,"shots":237,"deaths":2,"paused":false,"boss":true,"cleared":false,"flow":"play"}
+until done after 59 s game time
+trace art/raw/feel/run_live3.json 118
+print {"deaths":[],"kills":104,"flow":"play","t":60}
+stats {"fps":56,"scene":["Game","HUD"],"t":60438,"player":{"x":5160,"y":168,"vx":0,"vy":0,"lives":4,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4983,"enemies":0,"onscreen":0,"pShots":17,"eShots":0,"score":26500,"kills":104,"shots":385,"deaths":0,"paused":false,"boss":true,"cleared":false,"flow":"play"}

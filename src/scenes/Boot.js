@@ -41,7 +41,8 @@ export class Boot extends Phaser.Scene {
       }
       const q = window.__sheep.query;
       const scene = q.get('scene') || (q.get('test') ? 'game' : 'title');
-      this.scene.start(scene === 'title' ? 'Title' : 'Game', { stage: +(q.get('stage') || 1) });
+      const map = { title: 'Title', intro: 'Intro', ending: 'Ending' };   // ?scene=title|intro|ending|game
+      this.scene.start(map[scene] || 'Game', { stage: +(q.get('stage') || 1), drop: q.get('drop') === '1' });
     });
     this.load.start();
   }

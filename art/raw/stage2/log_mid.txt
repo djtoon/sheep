@@ -1,0 +1,2 @@
+art/raw/stage2/mid_1.png
+art/raw/stage2/mid_2.png

@@ -365,8 +365,8 @@ export class FX {
     const d = sc.add.sprite(e.x, e.y, e.texture.key, e.frame.name).setOrigin(0.5, 1).setDepth(45).setFlipX(e.flipX);
     d.setTint(0x605040).setTintMode(Phaser.TintModes.ADD);                     // 1-2 frame white hit-flash
     setTimeout(() => d.active && d.clearTint(), 34);
-    const da = sc.anims.get('soldier-die');
-    if (da && da.frames && da.frames.length && da.frames[0].textureKey === e.texture.key) d.play('soldier-die');
+    const dk = e.texture.key === 'soldier' ? 'soldier-die' : e.texture.key + '-die', da = sc.anims.get(dk);
+    if (da && da.frames && da.frames.length && da.frames[0].textureKey === e.texture.key) d.play(dk);
     // bright fireball pop (white -> yellow -> orange -> red) in front of the body, then grey smoke
     // kill payoff: one layered ~30px burst ABOVE the body, nudged toward the shooter; replaces the contact star
     const mk_ = this.marks.get(e); if (mk_ && mk_.scene) mk_.destroy(); this.marks.delete(e);

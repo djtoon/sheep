@@ -1,24 +1,146 @@
-{ "assets": [
-  {"type":"image","key":"hud-portrait","url":"assets/hud/portrait.png"},
-  {"type":"image","key":"hud-life","url":"assets/hud/life.png"},
-  {"type":"image","key":"hud-wbox","url":"assets/hud/wbox.png"},
-  {"type":"spritesheet","key":"hud-guns","url":"assets/hud/guns.png","frameWidth":40,"frameHeight":14},
-  {"type":"spritesheet","key":"hud-pip","url":"assets/hud/pip.png","frameWidth":4,"frameHeight":8},
-  {"type":"image","key":"hud-cursor","url":"assets/hud/cursor.png"},
-  {"type":"bitmapFont","key":"hud-font","url":"assets/hud/font-steel.png","data":"assets/hud/font-steel.xml"},
-  {"type":"bitmapFont","key":"hud-font-orange","url":"assets/hud/font-orange.png","data":"assets/hud/font-orange.xml"},
-  {"type":"bitmapFont","key":"hud-font-gold","url":"assets/hud/font-gold.png","data":"assets/hud/font-gold.xml"},
-  {"type":"bitmapFont","key":"hud-font-blue","url":"assets/hud/font-blue.png","data":"assets/hud/font-blue.xml"},
-  {"type":"bitmapFont","key":"hud-big-steel","url":"assets/hud/big-steel.png","data":"assets/hud/big-steel.xml"},
-  {"type":"bitmapFont","key":"hud-big-red","url":"assets/hud/big-red.png","data":"assets/hud/big-red.xml"},
-  {"type":"bitmapFont","key":"hud-big-gold","url":"assets/hud/big-gold.png","data":"assets/hud/big-gold.xml"},
-  {"type":"bitmapFont","key":"hud-big-orange","url":"assets/hud/big-orange.png","data":"assets/hud/big-orange.xml"},
-  {"type":"image","key":"title-bg","url":"assets/hud/title-bg.png"},
-  {"type":"image","key":"title-fire","url":"assets/hud/title-fire.png"},
-  {"type":"image","key":"title-logo","url":"assets/hud/title-logo.png"},
-  {"type":"image","key":"title-sheep","url":"assets/hud/title-sheep.png"},
-  {"type":"spritesheet","key":"title-heli","url":"assets/hud/title-heli.png","frameWidth":60,"frameHeight":17}
-],
-"anims": [
-  {"key":"title-heli-fly","texture":"title-heli","start":0,"end":1,"frameRate":24}
-] }
+{
+ "assets": [
+  {
+   "type": "image",
+   "key": "hud-portrait",
+   "url": "assets/hud/portrait.png"
+  },
+  {
+   "type": "image",
+   "key": "hud-life",
+   "url": "assets/hud/life.png"
+  },
+  {
+   "type": "image",
+   "key": "hud-wbox",
+   "url": "assets/hud/wbox.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "hud-guns",
+   "url": "assets/hud/guns.png",
+   "frameWidth": 40,
+   "frameHeight": 14
+  },
+  {
+   "type": "spritesheet",
+   "key": "hud-pip",
+   "url": "assets/hud/pip.png",
+   "frameWidth": 4,
+   "frameHeight": 8
+  },
+  {
+   "type": "image",
+   "key": "hud-cursor",
+   "url": "assets/hud/cursor.png"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-font",
+   "url": "assets/hud/font-steel.png",
+   "data": "assets/hud/font-steel.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-font-orange",
+   "url": "assets/hud/font-orange.png",
+   "data": "assets/hud/font-orange.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-font-gold",
+   "url": "assets/hud/font-gold.png",
+   "data": "assets/hud/font-gold.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-font-blue",
+   "url": "assets/hud/font-blue.png",
+   "data": "assets/hud/font-blue.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-big-steel",
+   "url": "assets/hud/big-steel.png",
+   "data": "assets/hud/big-steel.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-big-red",
+   "url": "assets/hud/big-red.png",
+   "data": "assets/hud/big-red.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-big-gold",
+   "url": "assets/hud/big-gold.png",
+   "data": "assets/hud/big-gold.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-big-orange",
+   "url": "assets/hud/big-orange.png",
+   "data": "assets/hud/big-orange.xml"
+  },
+  {
+   "type": "image",
+   "key": "title-bg",
+   "url": "assets/hud/title-bg.png"
+  },
+  {
+   "type": "image",
+   "key": "title-fire",
+   "url": "assets/hud/title-fire.png"
+  },
+  {
+   "type": "image",
+   "key": "title-logo",
+   "url": "assets/hud/title-logo.png"
+  },
+  {
+   "type": "image",
+   "key": "title-sheep",
+   "url": "assets/hud/title-sheep.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "title-heli",
+   "url": "assets/hud/title-heli.png",
+   "frameWidth": 60,
+   "frameHeight": 17
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-font-ink",
+   "url": "assets/hud/font-ink.png",
+   "data": "assets/hud/font-ink.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-big-ink",
+   "url": "assets/hud/big-ink.png",
+   "data": "assets/hud/big-ink.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-sfx-gold",
+   "url": "assets/hud/sfx-gold.png",
+   "data": "assets/hud/sfx-gold.xml"
+  },
+  {
+   "type": "bitmapFont",
+   "key": "hud-sfx-red",
+   "url": "assets/hud/sfx-red.png",
+   "data": "assets/hud/sfx-red.xml"
+  }
+ ],
+ "anims": [
+  {
+   "key": "title-heli-fly",
+   "texture": "title-heli",
+   "start": 0,
+   "end": 1,
+   "frameRate": 24
+  }
+ ]
+}

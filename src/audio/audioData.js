@@ -11,5 +11,38 @@ export const LOOPS = {
  "music-boss": {
   "loopStart": 0.0,
   "loopEnd": 22.325578
+ },
+ "music-stage2": {
+  "loopStart": 6.075949,
+  "loopEnd": 66.835442
+ },
+ "music-stage3": {
+  "loopStart": 6.575342,
+  "loopEnd": 72.328776
+ },
+ "music-boss2": {
+  "loopStart": 0.0,
+  "loopEnd": 21.573039
+ },
+ "music-boss3": {
+  "loopStart": 0.0,
+  "loopEnd": 30.638299
+ },
+ "music-intro": {
+  "loopStart": 2.142857,
+  "loopEnd": 36.428571
+ },
+ "music-ending": {
+  "loopStart": 9.6,
+  "loopEnd": 48.0
  }
+};
+// not in the boot manifest: fetched + decoded on first Music.play / Music.prefetch
+export const LAZY = {
+ "music-stage2": "assets/audio/music-stage2.ogg",
+ "music-stage3": "assets/audio/music-stage3.ogg",
+ "music-boss2": "assets/audio/music-boss2.ogg",
+ "music-boss3": "assets/audio/music-boss3.ogg",
+ "music-intro": "assets/audio/music-intro.ogg",
+ "music-ending": "assets/audio/music-ending.ogg"
 };

@@ -2,6 +2,8 @@ import { Boot } from './scenes/Boot.js';
 import { Title } from './scenes/Title.js';
 import { Game } from './scenes/Game.js';
 import { HUD } from './scenes/HUD.js';
+import { Intro } from './scenes/Intro.js';
+import { Ending } from './scenes/Ending.js';
 
 export const W = 480, H = 270;
 const q = new URLSearchParams(location.search);
@@ -39,6 +41,6 @@ const game = new Phaser.Game({
   scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
   physics: { default: 'arcade', arcade: { gravity: { y: 900 }, debug: window.__sheep.debug.hitboxes } },
   input: { gamepad: true },
-  scene: [Boot, Title, Game, HUD],
+  scene: [Boot, Title, Intro, Game, HUD, Ending],
 });
 window.__sheep.game = game;

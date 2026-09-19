@@ -1,0 +1,2 @@
+art/raw/stage2/scaffold_1.png
+art/raw/stage2/scaffold_2.png

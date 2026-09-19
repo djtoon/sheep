@@ -42,7 +42,7 @@ class Enemy extends Phaser.Physics.Arcade.Sprite {
   claimTell(time, ms) {
     const sc = this.scene;
     if ((sc.shotLock || 0) > time && sc.shotLockBy !== this && sc.shotLockBy && sc.shotLockBy.active) return false;
-    sc.shotLock = time + ms + Enemy.SHOT_GAP; sc.shotLockBy = this; return true;
+    sc.shotLock = time + ms + (sc.level?.spawns?.shotGap ?? Enemy.SHOT_GAP); sc.shotLockBy = this; return true;
   }
   // wind-up tell before a shot: scene event for FX/audio + a glint at the muzzle (fallback visual)
   telegraph(m, ms) {
@@ -62,14 +62,22 @@ class Enemy extends Phaser.Physics.Arcade.Sprite {
 
 // Contra's grunt. Each one gets a personality so a wave reads as individuals, not a conga line:
 //   runner: charges straight   hopper: bounds along in little hops   gunner: stops once on screen, tells, fires one shot, runs on
+// stages 2-3 reskin the jungle grunts: level.gruntSkin names a texture with the soldier sheet's frame layout,
+// and anims '<skin>-run', '<skin>-aim', ... mirror the 'soldier-*' ones
+const gruntTex = (scene) => { const k = scene.level?.gruntSkin; return k && scene.textures.exists(k) ? k : 'soldier'; };
+const skinKey = (e, key) => e.texture.key !== 'soldier' && typeof key === 'string' ? key.replace(/^soldier-/, e.texture.key + '-') : key;
+
 export class Soldier extends Enemy {
+  play(key, ...a) { return super.play(skinKey(this, key), ...a); }
   constructor(scene, x, y) {
-    super(scene, x, y, 'soldier', 1, 100);
+    super(scene, x, y, gruntTex(scene), 1, 100);
     this.body.setSize(14, 30).setOffset((this.width - 14) / 2, this.height - 30);
     this.dir = -1; this.play('soldier-run'); this.decided = 0;
     const seq = scene.soldierSeq = (scene.soldierSeq || 0) + 1;
     this.kind = ['runner', 'gunner', 'runner', 'hopper', 'gunner', 'runner', 'hopper'][seq % 7];
-    if (this.kind === 'gunner' && scene.cameras.main.scrollX < Soldier.GUNNERS_FROM) this.kind = 'runner';   // first stretch: grunts only charge, riflemen do the shooting
+    const gFrom = scene.level?.spawns?.gunnersFrom ?? Soldier.GUNNERS_FROM;   // a stage's spawn list may set its own
+    if (this.kind === 'gunner' && scene.cameras.main.scrollX < gFrom) this.kind = 'runner';
+    else if (this.kind === 'runner' && Math.random() < (scene.level?.spawns?.gunnerBias ?? 0)) this.kind = 'gunner';   // later stages: more grunts stop to shoot   // first stretch: grunts only charge, riflemen do the shooting
     this.speed = Soldier.SPEED * (0.9 + ((seq * 37) % 21) / 100);   // 0.90-1.10x, fixed per soldier
     this.born = scene.time.now; this.nextHop = this.born + rnd(500, 1100); this.stopUntil = 0; this.fired = 0;
   }
@@ -87,7 +95,7 @@ export class Soldier extends Enemy {
     const b = this.body, sc = this.scene, p = sc.player;
     // gunner: plant, tell, shoot, then carry on toward the sheep
     if (this.stopUntil > time) { b.setVelocityX(0); if (p) this.setFlipX(p.x > this.x); return; }
-    if (this.stopUntil && this.anims.currentAnim?.key !== 'soldier-run') { this.stopUntil = 0; this.play('soldier-run'); if (p) this.dir = p.x > this.x ? 1 : -1; }
+    if (this.stopUntil && this.anims.currentAnim?.key !== skinKey(this, 'soldier-run')) { this.stopUntil = 0; this.play('soldier-run'); if (p) this.dir = p.x > this.x ? 1 : -1; }
     if (this.kind === 'gunner' && !this.fired && p && b.blocked.down && time - this.born > 700 && this.canFire(30) && Math.abs(p.x - this.x) > 70 && Math.abs(p.x - this.x) < 300 && this.claimTell(time, Soldier.TELL)) {
       this.fired = 1; this.stopUntil = time + Soldier.TELL + 420;
       const kneel = this.y - p.y > -4 && Math.random() < 0.5;
@@ -145,8 +153,9 @@ Soldier.GUNNERS_FROM = 1800;   // camera x where running grunts start stopping t
 
 // Stands (on ground or a ledge) and fires aimed shots. Crouches between volleys.
 export class Rifleman extends Enemy {
+  play(key, ...a) { return super.play(skinKey(this, key), ...a); }
   constructor(scene, x, y) {
-    super(scene, x, y, 'soldier', 1, 200);   // Contra: every foot soldier dies in one hit
+    super(scene, x, y, gruntTex(scene), 1, 200);   // Contra: every foot soldier dies in one hit
     this.body.setSize(14, 30).setOffset((this.width - 14) / 2, this.height - 30);
     this.next = scene.time.now + 900;
     // art: alternate standing / kneeling riflemen (visual only; hitbox unchanged)

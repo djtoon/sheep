@@ -1,0 +1,2 @@
+art/raw/story/p8_1.png
+art/raw/story/p8_2.png

@@ -1,0 +1,347 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "trooper",
+   "url": "assets/roster2/trooper.png",
+   "frameWidth": 42,
+   "frameHeight": 50
+  },
+  {
+   "type": "spritesheet",
+   "key": "shield",
+   "url": "assets/roster2/shield.png",
+   "frameWidth": 44,
+   "frameHeight": 45
+  },
+  {
+   "type": "spritesheet",
+   "key": "sniper",
+   "url": "assets/roster2/sniper.png",
+   "frameWidth": 44,
+   "frameHeight": 47
+  },
+  {
+   "type": "spritesheet",
+   "key": "tank",
+   "url": "assets/roster2/tank.png",
+   "frameWidth": 68,
+   "frameHeight": 58
+  },
+  {
+   "type": "spritesheet",
+   "key": "drone2",
+   "url": "assets/roster2/drone2.png",
+   "frameWidth": 54,
+   "frameHeight": 48
+  },
+  {
+   "type": "spritesheet",
+   "key": "mech",
+   "url": "assets/roster2/mech.png",
+   "frameWidth": 66,
+   "frameHeight": 68
+  },
+  {
+   "type": "spritesheet",
+   "key": "grunt2",
+   "url": "assets/roster2/grunt2.png",
+   "frameWidth": 56,
+   "frameHeight": 44
+  }
+ ],
+ "anims": [
+  {
+   "key": "trooper-walk",
+   "texture": "trooper",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "frameRate": 10,
+   "repeat": -1
+  },
+  {
+   "key": "trooper-aim",
+   "texture": "trooper",
+   "frames": [
+    8
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "trooper-fire",
+   "texture": "trooper",
+   "frames": [
+    9,
+    9,
+    8
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "trooper-die",
+   "texture": "trooper",
+   "frames": [
+    10,
+    10,
+    11
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  },
+  {
+   "key": "shield-walk",
+   "texture": "shield",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "frameRate": 7,
+   "repeat": -1
+  },
+  {
+   "key": "shield-brace",
+   "texture": "shield",
+   "frames": [
+    8
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "shield-fire",
+   "texture": "shield",
+   "frames": [
+    9,
+    9,
+    8
+   ],
+   "frameRate": 10,
+   "repeat": 0
+  },
+  {
+   "key": "shield-die",
+   "texture": "shield",
+   "frames": [
+    10,
+    10,
+    11
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  },
+  {
+   "key": "sniper-walk",
+   "texture": "sniper",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 8,
+   "repeat": -1
+  },
+  {
+   "key": "sniper-aim",
+   "texture": "sniper",
+   "frames": [
+    4
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "sniper-fire",
+   "texture": "sniper",
+   "frames": [
+    5,
+    5,
+    4
+   ],
+   "frameRate": 10,
+   "repeat": 0
+  },
+  {
+   "key": "sniper-die",
+   "texture": "sniper",
+   "frames": [
+    6,
+    6,
+    7
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  },
+  {
+   "key": "tank-roll",
+   "texture": "tank",
+   "frames": [
+    0,
+    1,
+    2
+   ],
+   "frameRate": 10,
+   "repeat": -1
+  },
+  {
+   "key": "tank-fire",
+   "texture": "tank",
+   "frames": [
+    3,
+    3,
+    0
+   ],
+   "frameRate": 10,
+   "repeat": 0
+  },
+  {
+   "key": "drone2-fly",
+   "texture": "drone2",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 18,
+   "repeat": -1
+  },
+  {
+   "key": "drone2-fire",
+   "texture": "drone2",
+   "frames": [
+    4
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "mech-walk",
+   "texture": "mech",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "frameRate": 7,
+   "repeat": -1
+  },
+  {
+   "key": "mech-idle",
+   "texture": "mech",
+   "frames": [
+    0
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "mech-spin",
+   "texture": "mech",
+   "frames": [
+    8,
+    0
+   ],
+   "frameRate": 16,
+   "repeat": -1
+  },
+  {
+   "key": "mech-fire",
+   "texture": "mech",
+   "frames": [
+    9,
+    8
+   ],
+   "frameRate": 16,
+   "repeat": -1
+  },
+  {
+   "key": "mech-die",
+   "texture": "mech",
+   "frames": [
+    10,
+    11
+   ],
+   "frameRate": 6,
+   "repeat": 0
+  },
+  {
+   "key": "grunt2-run",
+   "texture": "grunt2",
+   "start": 0,
+   "end": 7,
+   "frameRate": 14
+  },
+  {
+   "key": "grunt2-aim",
+   "texture": "grunt2",
+   "frames": [
+    8
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "grunt2-shoot",
+   "texture": "grunt2",
+   "frames": [
+    9,
+    9,
+    8
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "grunt2-kneel-aim",
+   "texture": "grunt2",
+   "frames": [
+    10
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "grunt2-kneel-shoot",
+   "texture": "grunt2",
+   "frames": [
+    11,
+    11,
+    10
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "grunt2-die",
+   "texture": "grunt2",
+   "frames": [
+    12,
+    13,
+    14,
+    15
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  }
+ ]
+}

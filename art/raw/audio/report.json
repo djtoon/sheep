@@ -307,6 +307,281 @@
    "tp": -2.25,
    "rms50": -13.0,
    "kb": 18.9
+  },
+  {
+   "key": "music-stage2",
+   "kind": "music",
+   "dur": 66.835,
+   "loop": 6.075949367088608,
+   "lufs": -15.0,
+   "peak": -2.41,
+   "tp": -2.06,
+   "rms50": -12.7,
+   "kb": 1292.8
+  },
+  {
+   "key": "music-stage3",
+   "kind": "music",
+   "dur": 72.329,
+   "loop": 6.575342465753424,
+   "lufs": -15.0,
+   "peak": -1.5,
+   "tp": -1.4,
+   "rms50": -12.8,
+   "kb": 1447.3
+  },
+  {
+   "key": "music-boss2",
+   "kind": "music",
+   "dur": 21.573,
+   "loop": 0.0,
+   "lufs": -14.5,
+   "peak": -3.41,
+   "tp": -3.02,
+   "rms50": -13.0,
+   "kb": 421.6
+  },
+  {
+   "key": "music-boss3",
+   "kind": "music",
+   "dur": 30.638,
+   "loop": 0.0,
+   "lufs": -14.5,
+   "peak": -1.5,
+   "tp": -1.29,
+   "rms50": -12.9,
+   "kb": 607.3
+  },
+  {
+   "key": "music-intro",
+   "kind": "music",
+   "dur": 36.429,
+   "loop": 2.142857142857143,
+   "lufs": -15.0,
+   "peak": -2.2,
+   "tp": -2.12,
+   "rms50": -12.7,
+   "kb": 692.5
+  },
+  {
+   "key": "music-ending",
+   "kind": "music",
+   "dur": 48.0,
+   "loop": 9.6,
+   "lufs": -15.5,
+   "peak": -2.46,
+   "tp": -2.24,
+   "rms50": -13.0,
+   "kb": 1004.7
+  },
+  {
+   "key": "sfx-shotgun",
+   "kind": "sfx",
+   "dur": 0.45,
+   "loop": null,
+   "lufs": -21.4,
+   "peak": -8.71,
+   "tp": -8.57,
+   "rms50": -11.5,
+   "kb": 8.6
+  },
+  {
+   "key": "sfx-ricochet",
+   "kind": "sfx",
+   "dur": 0.5,
+   "loop": null,
+   "lufs": -23.8,
+   "peak": -5.98,
+   "tp": -5.92,
+   "rms50": -15.0,
+   "kb": 10.0
+  },
+  {
+   "key": "sfx-sniper-charge",
+   "kind": "sfx",
+   "dur": 0.7,
+   "loop": null,
+   "lufs": -21.9,
+   "peak": -9.29,
+   "tp": -8.93,
+   "rms50": -21.0,
+   "kb": 19.2
+  },
+  {
+   "key": "sfx-sniper",
+   "kind": "sfx",
+   "dur": 0.4,
+   "loop": null,
+   "lufs": -21.6,
+   "peak": -1.58,
+   "tp": -1.49,
+   "rms50": -12.0,
+   "kb": 8.6
+  },
+  {
+   "key": "sfx-tank",
+   "kind": "sfx",
+   "dur": 1.0,
+   "loop": null,
+   "lufs": -15.8,
+   "peak": -5.74,
+   "tp": -4.2,
+   "rms50": -9.0,
+   "kb": 16.4
+  },
+  {
+   "key": "sfx-gatling-spin",
+   "kind": "sfx",
+   "dur": 0.6,
+   "loop": null,
+   "lufs": -20.2,
+   "peak": -6.24,
+   "tp": -4.51,
+   "rms50": -19.0,
+   "kb": 16.9
+  },
+  {
+   "key": "sfx-gatling",
+   "kind": "sfx",
+   "dur": 0.495,
+   "loop": null,
+   "lufs": -18.3,
+   "peak": -2.14,
+   "tp": -2.07,
+   "rms50": -15.0,
+   "kb": 10.2
+  },
+  {
+   "key": "sfx-laser-bolt",
+   "kind": "sfx",
+   "dur": 0.22,
+   "loop": null,
+   "lufs": -25.1,
+   "peak": -5.41,
+   "tp": -5.17,
+   "rms50": -17.5,
+   "kb": 6.8
+  },
+  {
+   "key": "sfx-flame",
+   "kind": "sfx",
+   "dur": 1.1,
+   "loop": null,
+   "lufs": -17.3,
+   "peak": -6.99,
+   "tp": -6.69,
+   "rms50": -18.0,
+   "kb": 15.9
+  },
+  {
+   "key": "sfx-xeno-screech",
+   "kind": "sfx",
+   "dur": 0.55,
+   "loop": null,
+   "lufs": -13.1,
+   "peak": -10.78,
+   "tp": -10.53,
+   "rms50": -14.0,
+   "kb": 11.1
+  },
+  {
+   "key": "sfx-xeno-pounce",
+   "kind": "sfx",
+   "dur": 0.35,
+   "loop": null,
+   "lufs": -18.8,
+   "peak": -7.13,
+   "tp": -7.06,
+   "rms50": -16.0,
+   "kb": 8.6
+  },
+  {
+   "key": "sfx-mutant-roar",
+   "kind": "sfx",
+   "dur": 1.1,
+   "loop": null,
+   "lufs": -14.2,
+   "peak": -4.73,
+   "tp": -4.73,
+   "rms50": -11.5,
+   "kb": 17.5
+  },
+  {
+   "key": "sfx-goo",
+   "kind": "sfx",
+   "dur": 0.32,
+   "loop": null,
+   "lufs": -27.4,
+   "peak": -8.95,
+   "tp": -8.95,
+   "rms50": -16.0,
+   "kb": 7.2
+  },
+  {
+   "key": "sfx-glass",
+   "kind": "sfx",
+   "dur": 0.613,
+   "loop": null,
+   "lufs": -17.0,
+   "peak": -2.75,
+   "tp": -2.74,
+   "rms50": -13.0,
+   "kb": 12.2
+  },
+  {
+   "key": "sfx-queen-roar",
+   "kind": "sfx",
+   "dur": 1.9,
+   "loop": null,
+   "lufs": -11.1,
+   "peak": -4.32,
+   "tp": -4.32,
+   "rms50": -9.5,
+   "kb": 25.2
+  },
+  {
+   "key": "sfx-rotor",
+   "kind": "sfx",
+   "dur": 1.0,
+   "loop": null,
+   "lufs": -26.7,
+   "peak": -6.33,
+   "tp": -6.31,
+   "rms50": -19.0,
+   "kb": 15.9
+  },
+  {
+   "key": "sfx-thump",
+   "kind": "sfx",
+   "dur": 0.3,
+   "loop": null,
+   "lufs": -27.0,
+   "peak": -6.34,
+   "tp": -6.33,
+   "rms50": -13.0,
+   "kb": 6.7
+  },
+  {
+   "key": "sfx-page",
+   "kind": "sfx",
+   "dur": 0.318,
+   "loop": null,
+   "lufs": -21.0,
+   "peak": -8.6,
+   "tp": -8.49,
+   "rms50": -19.0,
+   "kb": 7.8
+  },
+  {
+   "key": "sfx-phone",
+   "kind": "sfx",
+   "dur": 2.0,
+   "loop": null,
+   "lufs": -19.0,
+   "peak": -8.93,
+   "tp": -8.92,
+   "rms50": -16.0,
+   "kb": 23.8
   }
  ],
  "loops": {
@@ -321,6 +596,30 @@
   "music-boss": {
    "loopStart": 0.0,
    "loopEnd": 22.325578
+  },
+  "music-stage2": {
+   "loopStart": 6.075949,
+   "loopEnd": 66.835442
+  },
+  "music-stage3": {
+   "loopStart": 6.575342,
+   "loopEnd": 72.328776
+  },
+  "music-boss2": {
+   "loopStart": 0.0,
+   "loopEnd": 21.573039
+  },
+  "music-boss3": {
+   "loopStart": 0.0,
+   "loopEnd": 30.638299
+  },
+  "music-intro": {
+   "loopStart": 2.142857,
+   "loopEnd": 36.428571
+  },
+  "music-ending": {
+   "loopStart": 9.6,
+   "loopEnd": 48.0
   }
  }
 }

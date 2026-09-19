@@ -1,0 +1,462 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "r3-hazmat",
+   "url": "assets/roster3/hazmat.png",
+   "frameWidth": 64,
+   "frameHeight": 48
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-toxic",
+   "url": "assets/roster3/toxic.png",
+   "frameWidth": 64,
+   "frameHeight": 48
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-clawbot",
+   "url": "assets/roster3/clawbot.png",
+   "frameWidth": 58,
+   "frameHeight": 54
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-xeno",
+   "url": "assets/roster3/xeno.png",
+   "frameWidth": 76,
+   "frameHeight": 52
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-mutant",
+   "url": "assets/roster3/mutant.png",
+   "frameWidth": 66,
+   "frameHeight": 64
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-walker",
+   "url": "assets/roster3/walker.png",
+   "frameWidth": 84,
+   "frameHeight": 72
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-laser",
+   "url": "assets/roster3/r3-laser.png",
+   "frameWidth": 10,
+   "frameHeight": 4
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-orb",
+   "url": "assets/roster3/r3-orb.png",
+   "frameWidth": 8,
+   "frameHeight": 8
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-flame",
+   "url": "assets/roster3/r3-flame.png",
+   "frameWidth": 48,
+   "frameHeight": 20
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-beam",
+   "url": "assets/roster3/r3-beam.png",
+   "frameWidth": 16,
+   "frameHeight": 9
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-tell",
+   "url": "assets/roster3/r3-tell.png",
+   "frameWidth": 16,
+   "frameHeight": 3
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-goo-acid",
+   "url": "assets/roster3/r3-goo-acid.png",
+   "frameWidth": 40,
+   "frameHeight": 28
+  },
+  {
+   "type": "spritesheet",
+   "key": "r3-goo-purple",
+   "url": "assets/roster3/r3-goo-purple.png",
+   "frameWidth": 40,
+   "frameHeight": 28
+  },
+  {
+   "type": "spritesheet",
+   "key": "grunt3",
+   "url": "assets/roster3/grunt3.png",
+   "frameWidth": 56,
+   "frameHeight": 44
+  }
+ ],
+ "anims": [
+  {
+   "key": "hazmat-move",
+   "texture": "r3-hazmat",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 8,
+   "repeat": -1
+  },
+  {
+   "key": "hazmat-attack",
+   "texture": "r3-hazmat",
+   "frames": [
+    4,
+    5
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "hazmat-aim",
+   "texture": "r3-hazmat",
+   "frames": [
+    6
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "hazmat-hit",
+   "texture": "r3-hazmat",
+   "frames": [
+    7
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "toxic-move",
+   "texture": "r3-toxic",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 7,
+   "repeat": -1
+  },
+  {
+   "key": "toxic-attack",
+   "texture": "r3-toxic",
+   "frames": [
+    4,
+    5
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "toxic-aim",
+   "texture": "r3-toxic",
+   "frames": [
+    6
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "toxic-hit",
+   "texture": "r3-toxic",
+   "frames": [
+    7
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "clawbot-move",
+   "texture": "r3-clawbot",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 6,
+   "repeat": -1
+  },
+  {
+   "key": "clawbot-attack",
+   "texture": "r3-clawbot",
+   "frames": [
+    4
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "clawbot-open",
+   "texture": "r3-clawbot",
+   "frames": [
+    5
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "clawbot-hit",
+   "texture": "r3-clawbot",
+   "frames": [
+    6
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "xeno-move",
+   "texture": "r3-xeno",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "xeno-crouch",
+   "texture": "r3-xeno",
+   "frames": [
+    4
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "xeno-attack",
+   "texture": "r3-xeno",
+   "frames": [
+    5
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "xeno-hit",
+   "texture": "r3-xeno",
+   "frames": [
+    6
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "mutant-move",
+   "texture": "r3-mutant",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 5,
+   "repeat": -1
+  },
+  {
+   "key": "mutant-attack",
+   "texture": "r3-mutant",
+   "frames": [
+    4
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "mutant-hit",
+   "texture": "r3-mutant",
+   "frames": [
+    5
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "walker-move",
+   "texture": "r3-walker",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 5,
+   "repeat": -1
+  },
+  {
+   "key": "walker-charge",
+   "texture": "r3-walker",
+   "frames": [
+    4,
+    5
+   ],
+   "frameRate": 10,
+   "repeat": -1
+  },
+  {
+   "key": "walker-fire",
+   "texture": "r3-walker",
+   "frames": [
+    6
+   ],
+   "frameRate": 1,
+   "repeat": -1
+  },
+  {
+   "key": "walker-hit",
+   "texture": "r3-walker",
+   "frames": [
+    7
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  },
+  {
+   "key": "r3-laser-a",
+   "texture": "r3-laser",
+   "frames": [
+    0,
+    1
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "r3-orb-a",
+   "texture": "r3-orb",
+   "frames": [
+    0,
+    1,
+    2
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "r3-flame-a",
+   "texture": "r3-flame",
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "r3-beam-a",
+   "texture": "r3-beam",
+   "frames": [
+    0,
+    1
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "r3-goo-acid-a",
+   "texture": "r3-goo-acid",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "r3-goo-purple-a",
+   "texture": "r3-goo-purple",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "grunt3-run",
+   "texture": "grunt3",
+   "start": 0,
+   "end": 7,
+   "frameRate": 14
+  },
+  {
+   "key": "grunt3-aim",
+   "texture": "grunt3",
+   "frames": [
+    8
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "grunt3-shoot",
+   "texture": "grunt3",
+   "frames": [
+    9,
+    9,
+    8
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "grunt3-kneel-aim",
+   "texture": "grunt3",
+   "frames": [
+    10
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "grunt3-kneel-shoot",
+   "texture": "grunt3",
+   "frames": [
+    11,
+    11,
+    10
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "grunt3-die",
+   "texture": "grunt3",
+   "frames": [
+    12,
+    13,
+    14,
+    15
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  }
+ ]
+}

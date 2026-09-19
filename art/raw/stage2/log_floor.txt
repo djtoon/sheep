@@ -1,0 +1,2 @@
+art/raw/stage2/floor_1.png
+art/raw/stage2/floor_2.png

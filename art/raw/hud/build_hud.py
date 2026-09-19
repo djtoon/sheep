@@ -57,6 +57,7 @@ G = {
 '%': ['##...#', '##..##', '...##.', '..##..', '.##...', '##..##', '#...##'],
 '=': ['.....', '.....', '#####', '.....', '#####', '.....', '.....'],
 'x': ['.....', '.....', '##.##', '.###.', '.###.', '##.##', '.....'],
+',': ['..', '..', '..', '..', '..', '##', '.#'],
 '+': ['......', '..##..', '..##..', '######', '..##..', '..##..', '......'],
 ' ': ['...', '...', '...', '...', '...', '...', '...'],
 }
@@ -66,10 +67,11 @@ RAMPS = {  # top -> bottom body colours (7 rows)
  'orange': ['ffe470', 'ffc434', 'ffa41c', 'ff8a0e', 'f47202', 'dc5c00', 'c24a00'],
  'gold':   ['fffbd8', 'fff0a0', 'ffe070', 'ffcc48', 'f8b030', 'ea9420', 'd67c14'],
  'blue':   ['e8f6ff', 'c8e8ff', 'a8d4ff', '8cc0f8', '76aaf0', '6294e0', '5280cc'],
+ 'ink':    ['16121e', '16121e', '16121e', '16121e', '16121e', '16121e', '16121e'],
  'red':    ['fff0b0', 'ffc050', 'ff8a2c', 'ff5a20', 'e83418', 'c41c14', '9a1010'],
 }
 
-def glyph_img(ch, ramp, scale=1, shadow=False):
+def glyph_img(ch, ramp, scale=1, shadow=False, outline=True):
     rows = G[ch]; w = len(rows[0]); h = 7
     body = np.array([[c == '#' for c in r] for r in rows])
     if scale > 1: body = body.repeat(scale, 0).repeat(scale, 1)
@@ -84,23 +86,23 @@ def glyph_img(ch, ramp, scale=1, shadow=False):
         ring |= np.roll(np.roll(m, dy, 0), dx, 1)
     if shadow:  # extra drop shadow to lower-right
         sh = np.zeros_like(m); sh[1:, 1:] = ring[:-1, :-1] | m[:-1, :-1]; ring |= sh
-    img[ring & ~m] = OUTL
+    if outline: img[ring & ~m] = OUTL
     cols = RAMPS[ramp]
     for y in range(bh):
         t = y / max(1, bh - 1)
         c = hx(cols[min(6, int(round(t * 6)))])
         for x in range(bw):
             if body[y, x]: img[1 + y, 1 + x] = c
-    if scale > 1:  # 1px bright rim on top edges for the big font
+    if scale > 1 and outline:  # 1px bright rim on top edges for the big font
         for y in range(bh):
             for x in range(bw):
                 if body[y, x] and (y == 0 or not body[y - 1, x]):
                     img[1 + y, 1 + x] = hx('ffffff')
     return img, bw
 
-def build_font(name, ramp, scale=1, shadow=False):
+def build_font(name, ramp, scale=1, shadow=False, outline=True):
     chars = list(G.keys())
-    imgs = [(c, *glyph_img(c, ramp, scale, shadow)) for c in chars]
+    imgs = [(c, *glyph_img(c, ramp, scale, shadow, outline)) for c in chars]
     H = max(i.shape[0] for _, i, _ in imgs)
     W = sum(i.shape[1] + 1 for _, i, _ in imgs)
     sheet = np.zeros((H, W, 4), np.uint8); x = 0; xml = []
@@ -119,6 +121,9 @@ def build_font(name, ramp, scale=1, shadow=False):
 
 for r in ['steel', 'orange', 'gold', 'blue']: build_font('font-' + r, r)
 for r in ['steel', 'red', 'gold', 'orange']: build_font('big-' + r, r, 2, True)
+build_font('font-ink', 'ink', 1, False, False)          # comic balloon lettering (dark ink on white, no outline)
+build_font('big-ink', 'ink', 2, False, False)
+for r in ['gold', 'red']: build_font('sfx-' + r, r, 3, True)   # comic SFX lettering
 
 # ---------------------------------------------------------------- ascii art helper
 def art(rows, pal):

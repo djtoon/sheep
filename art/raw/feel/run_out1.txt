@@ -1,4 +1,4 @@
-until done after 60.5 s game time
-trace art/raw/feel/run_live1.json 121
-print {"deaths":["1844:bullet:Turret@1880,136","2302:bullet:Drone@2372,76"],"kills":129,"flow":"play","t":62}
-stats {"fps":56,"scene":["Game","HUD"],"t":62489,"player":{"x":5170,"y":168,"vx":100,"vy":0,"lives":1,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4993,"enemies":2,"onscreen":0,"pShots":17,"eShots":0,"score":18400,"kills":129,"shots":238,"deaths":2,"paused":false,"boss":true,"cleared":false,"flow":"play"}
+until done after 75 s game time
+trace art/raw/feel/run_live1.json 150
+print {"deaths":["2858:bullet:Soldier/gunner@2592,168","4430:bullet:Hazmat","4783:bullet:Hazmat","4911:bullet:Soldier/gunner@5016,168","5018:bullet:Soldier/gunner@5180,168"],"kills":102,"flow":"continue","t":76}
+stats {"fps":57,"scene":["Game","HUD"],"t":76456,"player":{"x":4988,"y":170,"vx":100,"vy":0,"lives":-1,"ground":true,"spin":false,"prone":false,"dead":true,"invuln":0,"aim":[1,-1],"facing":1,"weapon":"R"},"cam":4841,"enemies":3,"onscreen":3,"pShots":0,"eShots":0,"score":25300,"kills":102,"shots":386,"deaths":5,"paused":false,"boss":false,"cleared":false,"flow":"continue"}

@@ -1,14 +1,15 @@
-import { stage1 } from '../level/stage1.js';
-import { LevelView } from '../level/LevelView.js';
+import { STAGES } from '../level/stages.js';
+import { makeView } from '../level/views.js';
 import { Player } from '../entities/Player.js';
 import { ENEMY_TYPES } from '../entities/Enemies.js';
-import { BossWall } from '../entities/Boss.js';
+import { TYPES } from '../entities/rosters.js';
+import { BOSSES } from '../entities/bosses.js';
+import { dropIn } from '../fx/dropin.js';
 import { WEAPONS } from '../entities/weapons.js';
 import { FX } from '../fx/FX.js';
 import { Sfx } from '../audio/Sfx.js';
 import { Controls } from '../input.js';
 
-const STAGES = { 1: stage1 };
 const rnd = Phaser.Math.Between;
 
 // Scene events Game emits (for FX / HUD / audio). Payloads in brackets.
@@ -26,7 +27,7 @@ export class Game extends Phaser.Scene {
   constructor() { super('Game'); }
 
   init(data) {
-    this.stageNo = data.stage || 1;
+    this.stageNo = data.stage || 1; this.dropping = !!data.drop;
     this.level = STAGES[this.stageNo];
     this.state = data.state || { score: 0, lives: 3, hi: +(localStorage.getItem('af-hi') || 0), continues: 0 };
     this.stat = { kills: 0, deaths: 0, killLog: [], deathLog: [], t0: 0 };
@@ -42,7 +43,7 @@ export class Game extends Phaser.Scene {
     this.physics.world.setBounds(0, -200, L.width, L.height + 400);
     this.physics.world.checkCollision.down = false;
     this.fx = new FX(this); this.sfx = new Sfx(this); this.controls = new Controls(this);
-    this.view = new LevelView(this, L);
+    this.view = makeView(this, L);
     this.flow = 'play'; this.paused = false; this.startLock = this.time.now + 500; this.stat.t0 = this.time.now;
 
     // terrain physics
@@ -93,7 +94,9 @@ export class Game extends Phaser.Scene {
 
     this.scene.launch('HUD', { game: this });
     this.events.emit('weapon', this.player.weapon);
+    if (this.state.weapon && this.state.weapon !== 'R') this.player.setWeapon(this.state.weapon);   // Contra: the gun you finished a stage with carries into the next
     if (q.get('weapon')) this.player.setWeapon(q.get('weapon'));
+    if (this.dropping) { this.flow = 'drop'; this.cameras.main.fadeIn(400, 0, 0, 0); dropIn(this); }   // flow 'drop': no spawns, no enemy fire (canFire needs 'play')   // helicopter drop-in at stage start (story builder); calls dropDone()
     window.__sheep.ready = true;
   }
 
@@ -154,8 +157,9 @@ export class Game extends Phaser.Scene {
       b.setTexture(w.tex); b.body.setSize(b.frame.realWidth, b.frame.realHeight);
       b.body.reset(o.x, o.y); b.body.setAllowGravity(false);
       b.body.setVelocity(Math.cos(a) * w.speed, Math.sin(a) * w.speed);
-      b.dmg = w.dmg; b.pierce = !!w.pierce; b.hitSet = new Set(); b.born = this.time.now;
+      b.dmg = w.dmg; b.wpn = w.name; b.pierce = !!w.pierce; b.hitSet = new Set(); b.born = this.time.now;
     }
+    this.pointBlank(o, w);
     this.stat.shots = (this.stat.shots || 0) + 1; this.stat.bullets = (this.stat.bullets || 0) + w.spread.length;
     this.fx.muzzle(o.x, o.y, Math.cos(base), Math.sin(base), 1);
     this.sfx.play(w === WEAPONS.S ? 'spread' : w === WEAPONS.L ? 'laser' : 'shoot', 0.8);
@@ -175,11 +179,38 @@ export class Game extends Phaser.Scene {
   bulletHit(b, e) {
     if (b.dmg === undefined) [b, e] = [e, b]; // arcade may hand the pair over in either order
     if (!b.active || !e.active || b.hitSet.has(e)) return;
+    // set-pieces soak at most 2 pellets of one spread volley, so point-blank S doesn't erase a mini-boss in 2 s
+    if (e.volleyCap && b.born !== undefined) {
+      if (e._vb !== b.born) { e._vb = b.born; e._vn = 0; }
+      if (++e._vn > e.volleyCap) { this.fx.impact(b.x, b.y); this.killBullet(b); return; }
+    }
+    // set-piece damage budget: at most dpsCap damage per rolling second, so S/M/L all land in the same 4-8 s window
+    // and the weak rifle (~4.5 dps, under the cap) still finishes it in ~11 s
+    let dmg = b.dmg;
+    if (e.dpsCap && b.wpn === 'RIFLE') dmg *= 2;   // the starting rifle is under the cap anyway: let it finish a set-piece in ~10 s
+    if (e.dpsCap) {
+      const now = this.time.now; e._dl = (e._dl || []).filter(h => now - h.t < 1000);
+      const used = e._dl.reduce((a, h) => a + h.n, 0), room = e.dpsCap - used;
+      if (room <= 0) { this.fx.impact(b.x, b.y); if (!b.pierce) this.killBullet(b); else b.hitSet.add(e); return; }
+      dmg = Math.min(dmg, room); e._dl.push({ t: now, n: dmg });
+    }
     if (!b.hitSet.size) this.stat.hits = (this.stat.hits || 0) + 1;   // accuracy: bullets that hit something
     b.hitSet.add(e);
     this.fx.impact(b.x, b.y);
-    e.damage(b.dmg, b);
+    e.damage(dmg, b);
     if (!b.pierce) this.killBullet(b);
+  }
+  // point-blank: the gun muzzle sits ~30 px ahead of the sheep, so a bullet born past (or inside) an enemy the sheep is
+  // pressed against would never touch it. Contra counts those: sweep the gap from the sheep's body to the muzzle.
+  pointBlank(o, w) {
+    const p = this.player, y = o.y, x0 = p.x, x1 = o.x;
+    const fresh = this.pBullets.getChildren().filter(b => b.active && b.born === this.time.now);
+    for (const e of this.enemies.getChildren()) {
+      if (!e.active || !e.body || !e.damage || e.dead) continue;
+      const eb = e.body;
+      if (Math.max(x0, x1) < eb.x || Math.min(x0, x1) > eb.right || y < eb.y - 4 || y > eb.bottom + 4) continue;
+      for (const b of fresh) if (b.active && !b.hitSet.has(e)) this.bulletHit(b, e);
+    }
   }
   // Player shots vs enemies with Contra-generous boxes: a bullet counts as >= 6 px tall, and anything that walks
   // (soldiers, riflemen) is hittable from 14 px above its head to 14 px below its feet: a level shot kills a grunt on a
@@ -247,7 +278,8 @@ export class Game extends Phaser.Scene {
       if (!br) return false; y = br.y;
     }
     // never stack: the previous grunt from this edge must have cleared ~28 px first
-    if (this.enemies.getChildren().some(o => o.active && o instanceof ENEMY_TYPES.soldier && Math.abs(o.x - x) < 28 && Math.abs(o.y - y) < 20)) return 'busy';
+    if (this.stageNo > 1 ? this.groundCrowd(x, y, 32)   // stages 2+: any ground unit (roster walkers too) blocks the entry
+        : this.enemies.getChildren().some(o => o.active && o instanceof ENEMY_TYPES.soldier && Math.abs(o.x - x) < 28 && Math.abs(o.y - y) < 20)) return 'busy';
     const e = new ENEMY_TYPES.soldier(this, x, y); e.dir = side < 0 ? 1 : -1; this.enemies.add(e);
     return true;
   }
@@ -255,7 +287,8 @@ export class Game extends Phaser.Scene {
   spawn(s) {
     if (s.type === 'stream') return this.setStream(s);
     if (s.type === 'capsule') return this.spawnCapsule(this.cameras.main.scrollX + this.scale.width + 10, s.y, s.drop);
-    const T = ENEMY_TYPES[s.type];
+    const T = TYPES[s.type];
+    const tries = {};
     const one = (i) => {
       if (!this.player || this.cleared) return;
       const R2 = this.cameras.main.scrollX + this.scale.width;
@@ -266,16 +299,53 @@ export class Game extends Phaser.Scene {
         else if (!r) this.edgeSoldier(-side);
         return;
       }
-      let x = s.at ?? R2 + 16, y;
-      if (s.type === 'drone') { x = R2 + 20; y = 60 + Math.random() * 40; }
+      const left = s.side === 'L' || (s.side === 'LR' && i % 2 === 1), L0 = this.cameras.main.scrollX;
+      let x = s.at ?? (left ? L0 - 16 : R2 + 16), y;
+      if (!s.at && this.player && Math.abs(this.player.x - x) < 60) x += left ? -40 : 40;   // never appear on top of the sheep
+      if (s.type === 'drone') { x = left ? L0 - 20 : R2 + 20; y = 60 + Math.random() * 40; }
       else {
-        if (s.y === undefined) { let n = 0; while (this.groundYAt(x) > this.level.height && n++ < 40) x += 8; } // never spawn over a pit
+        if (s.y === undefined) { let n = 0; while (this.groundYAt(x) > this.level.height && n++ < 40) x += left ? -8 : 8; } // never spawn over a pit
         y = s.y ?? this.groundYAt(x);
       }
+      // never stack ground units: if another walker already stands within ~32 px of the entry point, try again shortly
+      const flyer = s.type === 'drone' || s.type === 'drone2' || s.type === 'clawbot';
+      if (!flyer && (tries[i] = (tries[i] || 0) + 1) < 12 && this.groundCrowd(x, y, 32)) { this.time.delayedCall(260, () => one(i)); return; }
       const e = new T(this, x, y); this.enemies.add(e);
+      if (left && e.face) e.face(true);
+      // set-piece (mini-boss): the camera holds at s.lockAt until it dies; the ambient stream pauses
+      if (s.lock) {
+        e.volleyCap = s.volleyCap ?? 2;
+        if (s.hp) e.hp = s.hp;                 // spawn-entry HP override (tuned with dpsCap for weapon-independent length)
+        if (s.dpsCap) e.dpsCap = s.dpsCap;
+        this.setPiece = e; this.setPieceScroll = s.lockAt ?? this.cameras.main.scrollX; this.streamBeforeSet = this.stream; this.stream = null;
+        this.events.emit('setpiece', { type: s.type, enemy: e });
+      }
     };
     const n = s.count || 1;
     for (let i = 0; i < n; i++) this.time.delayedCall(i * (s.gap || 0), () => one(i));
+  }
+
+  groundCrowd(x, y, d) {
+    return this.enemies.getChildren().some(o => o.active && !o.dead && o.body && o.body.allowGravity && !o.isCapsule && Math.abs(o.x - x) < d && Math.abs(o.y - y) < 20);
+  }
+  // soft separation: ground units on the same floor closer than one body width get eased apart (the one farther from
+  // the sheep gives way), so troopers / mutants / crawlers never pile into one blob
+  separateGround() {
+    const g = this.enemies.getChildren().filter(e => e.active && !e.dead && e.body && e.body.allowGravity && !e.isCapsule && (e.body.blocked.down || e.body.touching.down));
+    if (g.length < 2) return;
+    const px = this.player.x;
+    for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
+      const a = g[i], b = g[j];
+      if (Math.abs(a.y - b.y) > 10) continue;
+      const min = Math.max(28, Math.min(40, (a.body.width + b.body.width) / 2 + 10)), dx = b.x - a.x;
+      if (Math.abs(dx) >= min) continue;
+      let rear = Math.abs(a.x - px) > Math.abs(b.x - px) ? a : b, other = rear === a ? b : a;
+      if (rear === this.setPiece || rear.bigBoom) [rear, other] = [other, rear];   // mini-bosses / heavies never get shoved
+      if (rear === this.setPiece || rear.bigBoom) continue;
+      const dir = rear.x === other.x ? (rear.x > px ? 1 : -1) : Math.sign(rear.x - other.x);
+      const nx = rear.x + dir * Math.min(2, min - Math.abs(dx));
+      if (this.groundAhead(nx + dir * 6, rear.y)) { rear.x = nx; rear.body.updateFromGameObject(); }
+    }
   }
 
   spawnCapsule(x, y, drop) {
@@ -366,6 +436,20 @@ export class Game extends Phaser.Scene {
     this.sfx.play('start');
     this.flow = 'play'; this.respawn();
   }
+  // after the results card: next stage keeps score/lives/continues, the last stage goes to the ending
+  goNext() {
+    if (this.leaving) return; this.leaving = true;
+    const next = STAGES[this.stageNo + 1];
+    const state = { ...this.state, lives: Math.max(this.state.lives, 1), weapon: this.player && !this.player.dead ? this.player.weapon : 'R' };
+    this.cameras.main.fadeOut(400, 0, 0, 0);
+    this.time.delayedCall(420, () => {
+      this.scene.stop('HUD');
+      if (next) this.scene.start('Game', { stage: this.stageNo + 1, state, drop: true });
+      else this.scene.start(this.scene.get('Ending') ? 'Ending' : 'Title', { score: this.state.score });
+    });
+  }
+  // stage-start drop-in (helicopter) finished: the player gets control
+  dropDone() { this.dropping = false; if (this.flow === 'drop') this.flow = 'play'; if (this.player) this.player.auto = null; }
   toTitle() {
     if (this.leaving) return; this.leaving = true;
     this.cameras.main.fadeOut(400, 0, 0, 0);
@@ -399,11 +483,11 @@ export class Game extends Phaser.Scene {
     if (bonus) this.addScore(bonus);
     this.flow = 'results'; this.resultsFrom = this.time.now + 1200;
     const r = { score: this.state.score, kills: st.kills, shots: st.bullets || 0, hits: st.hits || 0, accuracy, lives, livesBonus: bonus,
-      time: Math.round((this.time.now - st.t0) / 1000), deaths: st.deaths, continues: this.state.continues || 0, hi: this.state.hi, next: 'STAGE 2 COMING SOON' };
+      time: Math.round((this.time.now - st.t0) / 1000), deaths: st.deaths, continues: this.state.continues || 0, hi: this.state.hi, next: STAGES[this.stageNo + 1] ? 'NEXT: ' + STAGES[this.stageNo + 1].name + (STAGES[this.stageNo + 1].subtitle ? ' - ' + STAGES[this.stageNo + 1].subtitle : '') : 'MISSION COMPLETE' };
     this.results = r; window.__sheep.results = r;
     this.events.emit('stage-end', r);
     if (!this.hooked.results) this.drawResults(r);
-    this.resultsEv = this.time.delayedCall(6000, () => this.toTitle());
+    this.resultsEv = this.time.delayedCall(6000, () => this.goNext());
   }
   // fallback results lines (under the HUD's STAGE CLEAR card + score tally); a HUD owner sets hooked.results to draw its own
   drawResults(r) {
@@ -439,7 +523,7 @@ export class Game extends Phaser.Scene {
   update(time, dt) {
     const c = this.controls, p = this.player, cam = this.cameras.main, W = this.scale.width, L = this.level;
     c.poll();
-    if (this.flow === 'results') { if (time > this.resultsFrom && (c.pressed('start') || c.pressed('fire') || c.pressed('jump'))) this.toTitle(); return; }
+    if (this.flow === 'results') { if (time > this.resultsFrom && (c.pressed('start') || c.pressed('fire') || c.pressed('jump'))) this.goNext(); return; }
     if (this.flow === 'continue') { if (c.pressed('start') || c.pressed('fire') || c.pressed('jump')) this.doContinue(); return; }
     if (this.flow === 'play' && time > this.startLock && c.pressed('start')) this.setPaused(!this.paused);
     if (this.paused) { if (!this.physics.world.isPaused) this.physics.world.pause(); this.fx.frozen = true; return; }
@@ -450,7 +534,16 @@ export class Game extends Phaser.Scene {
     this.stepUp(p);
 
     // forward-only camera with a small run-direction lead, eased so it never jerks
-    const bossLock = this.boss && !p.auto ? L.boss.x + 140 - W : L.width - W;
+    let bossLock = this.boss && !p.auto ? L.boss.x + 140 - W : L.width - W;
+    if (this.setPiece) {
+      if (this.setPiece.active && !this.setPiece.dead) {
+        bossLock = Math.min(bossLock, Math.max(this.setPieceScroll, this.camMinX));
+        // the set-piece never leaves the held screen (it must stay shootable)
+        const sp = this.setPiece, lo = this.camMinX + 24, hi = this.camMinX + W - 24;
+        if (sp.x > hi || sp.x < lo) { sp.x = Phaser.Math.Clamp(sp.x, lo, hi); sp.body.updateFromGameObject(); }
+      }
+      else { this.setPiece = null; this.stream = this.stream || this.streamBeforeSet || null; this.nextStream = time + 1500; this.events.emit('setpiece-end'); }
+    }
     const leadWant = p.body.velocity.x > 0 ? 26 : 0;
     this.lead += Phaser.Math.Clamp(leadWant - this.lead, -dt * 0.03, dt * 0.05);
     const want = Phaser.Math.Clamp(p.x - (W * 0.42 - this.lead), this.camMinX, Math.min(L.width - W, bossLock));
@@ -464,7 +557,7 @@ export class Game extends Phaser.Scene {
     this.view.update(cam);
 
     // scripted spawns (keyed on the camera's right edge) + the ambient soldier stream
-    while (this.spawnIdx < L.spawns.length && L.spawns[this.spawnIdx].x <= cam.scrollX + W) this.spawn(L.spawns[this.spawnIdx++]);
+    if (!this.dropping) while (this.spawnIdx < L.spawns.length && L.spawns[this.spawnIdx].x <= cam.scrollX + W) this.spawn(L.spawns[this.spawnIdx++]);
     if (this.camMinX > (this.lastCamX ?? -1) + 1) { this.lastCamX = this.camMinX; this.camMoveT = time; }
     const camping = time - (this.camMoveT ?? time) > 6000;   // standing still >6 s: the ambient stream dries up (no kill farming)
     if (this.stream && this.flow === 'play' && !this.boss && !p.dead && !camping && time > this.nextStream) {
@@ -478,7 +571,7 @@ export class Game extends Phaser.Scene {
         else if (!r && (s.left <= 0 || this.edgeSoldier(-side) !== true)) this.nextStream = time + 400;   // no rear spawns where the beat says none
       }
     }
-    if (!this.boss && L.boss && cam.scrollX + W >= L.boss.x + 100) { this.boss = new BossWall(this, L.boss.x); this.stream = null; this.events.emit('boss'); }
+    if (!this.boss && L.boss && cam.scrollX + W >= L.boss.x + 100) { this.boss = new (BOSSES[L.boss.type || 'wall'] || BOSSES.wall)(this, L.boss.x); this.stream = null; this.events.emit('boss'); }
     if (this.boss) this.boss.update(time);
 
     // cull bullets + pickups
@@ -487,6 +580,7 @@ export class Game extends Phaser.Scene {
     });
     kill(this.pBullets); kill(this.eBullets);
     this.hitScan();
+    if (this.stageNo > 1) this.separateGround();   // stage 1 is frozen (its grunts already keep their own spacing)
     this.pBullets.getChildren().forEach(b => {
       // level shots may skim 10 px into a step's lip (Contra bullets ignore terrain entirely); downward shots hit the dirt
       const gy = this.groundYAt(b.x);

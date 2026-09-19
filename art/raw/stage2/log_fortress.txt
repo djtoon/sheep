@@ -1,0 +1,2 @@
+art/raw/stage2/fortress_1.png
+art/raw/stage2/fortress_2.png

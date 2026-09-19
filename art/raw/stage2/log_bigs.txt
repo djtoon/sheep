@@ -1,0 +1,2 @@
+art/raw/stage2/bigs_1.png
+art/raw/stage2/bigs_2.png

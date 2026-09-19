@@ -2,6 +2,19 @@
 
 A Contra-style run-and-gun starring a commando sheep. Built with Phaser 4 (vendored in `lib/`).
 
+## The campaign
+
+1. **Story intro**: a comic-book briefing (the President, the call, the chopper ride). Enter / X / Z advance a panel; Esc (or holding a key) skips it.
+2. **STAGE 01 - JUNGLE ASSAULT**: the sheep fast-ropes in from a helicopter. Boss: the IRON EAGLE GATE.
+3. **STAGE 02 - NIGHT RAID**: night military base B-02, again by chopper. Boss: the B-02 WARDEN mech.
+4. **STAGE 03 - SECRET LAB**: the underground lab, entered by rope through a blown ceiling hatch. Boss: SPECIMEN X.
+5. **Ending**: a comic epilogue, then THE END and a credits roll over your final score, and back to the title.
+
+Each boss opens with a WARNING! alarm and shows a health strip at the bottom of the screen. After each boss, a results card
+shows score, kills, accuracy, the lives bonus (2,000 per life left) and time. Press Start to move on.
+**Score, lives and your current weapon carry over** from stage to stage. Dying resets the weapon to the rifle, as in Contra.
+Extra lives come at 20,000 points and then every 60,000.
+
 ## Run
 
 ```
@@ -22,7 +35,11 @@ dependencies, so `npm install` is only needed for the dev tools (Playwright scre
 | Drop through a bridge | Down + Jump | Down + A |
 | Start / pause | Enter or Esc | Start |
 
-On the title screen, Enter, X or Z starts the game. When a game ends you have a 9-second **CONTINUE?** countdown: press Start to continue.
+On the title screen, Enter, X or Z starts the game. Press Start during play to pause.
+When you run out of lives you get a 9-second **CONTINUE?** countdown. Press Start to continue on the spot with 3 lives, but your score is reset.
+If the countdown runs out, the game returns to the title, and a new game starts again from the intro.
+
+Weapon capsules fly across the screen. Shoot one to drop a pickup: **M** machine gun, **S** spread, **L** laser (you start with the **R** rifle).
 
 ## Dev / test query flags
 
@@ -30,17 +47,25 @@ These flags only apply when they are in the URL, so normal play (no query string
 
 | Flag | Effect |
 |---|---|
-| `?test=1` | skip the title and boot straight into the stage (used by the tools) |
-| `?scene=title` | force the title screen (overrides `test=1`) |
+| `?test=1` | skip the title and boot straight into a stage (used by the tools) |
+| `?stage=1\|2\|3` | which stage to boot into (with `test=1`); `?test=1&stage=3` is a direct entry into the lab |
+| `?drop=1` | start the stage with its drop-in (helicopter for stages 1-2, ceiling hatch for stage 3), as in the campaign |
+| `?scene=title\|intro\|ending` | force a scene: the title, the story intro (it continues into stage 1) or the ending (overrides `test=1`) |
+| `?page=N` | with `scene=intro`: start the comic at page N |
+| `?score=N` | with `scene=ending`: the final score shown in the credits |
+| `?credits=1` | with `scene=ending`: skip the epilogue page and go straight to THE END and the credits |
 | `?god=1` | invulnerable hero |
-| `?x=2400` | start at level x-position 2400 (the boss arena starts around 5000); also skips the stage intro card |
+| `?x=2400` | start at level x-position 2400 (every stage's boss arena starts around 5000); also skips the stage intro card |
 | `?weapon=R\|M\|S\|L` | start with a weapon: Rifle, Machine gun, Spread or Laser |
 | `?hitboxes=1` | draw arcade physics bodies |
-| `?nointro=1` | skip the STAGE 01 intro card |
-| `?nocull=1` | disable off-screen culling of level props (perf comparison) |
-| `?bgshift=N` | override the backdrop's vertical lift (art tuning) |
+| `?nointro=1` | skip the stage intro card |
+| `?nocull=1` | disable off-screen culling of stage-1 level props (perf comparison) |
+| `?bgshift=N` | override the stage-1 backdrop's vertical lift (art tuning) |
 
-Example: `http://localhost:8080/?test=1&god=1&x=4900&weapon=S` puts you at the boss with the spread gun, invulnerable.
+Examples:
+- `http://localhost:8080/?test=1&god=1&x=4900&weapon=S` puts you at the stage-1 boss with the spread gun, invulnerable.
+- `http://localhost:8080/?test=1&stage=2&drop=1` starts stage 2 exactly as the campaign does, with the chopper drop.
+- `http://localhost:8080/?scene=ending&score=123450` plays the ending.
 
 ## Tools
 

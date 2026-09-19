@@ -105,7 +105,7 @@ export class Title extends Phaser.Scene {
       this.sfx.play('start'); Music.stop(400);
       this.time.addEvent({ delay: 60, repeat: 7, callback: () => this.items[0].setVisible(!this.items[0].visible) });
       this.cameras.main.fadeOut(380, 0, 0, 0);
-      this.time.delayedCall(420, () => this.scene.start('Game', { stage: 1 }));
+      this.time.delayedCall(420, () => this.scene.start('Intro'));
     };
     kb.on('keydown-ENTER', go); kb.on('keydown-X', go); kb.on('keydown-Z', go); this.input.on('pointerdown', go);
     window.__sheep.ready = true;

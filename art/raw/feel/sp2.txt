@@ -1,0 +1,4 @@
+until done after 6 s game time
+clip shots/feel/s2_mech.mp4 121 frames
+print [[["start",5717],["end",7600,2506]],[]]
+stats {"fps":56,"scene":["Game","HUD"],"t":7733,"player":{"x":2873,"y":168,"vx":100,"vy":0,"lives":3,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":2523,"enemies":2,"onscreen":2,"pShots":1,"eShots":0,"score":3700,"kills":8,"shots":28,"deaths":0,"paused":false,"boss":false,"cleared":false,"flow":"play"}

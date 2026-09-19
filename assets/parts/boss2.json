@@ -1,0 +1,69 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "b2-body",
+   "url": "assets/boss2/b2-body.png",
+   "frameWidth": 159,
+   "frameHeight": 153
+  },
+  {
+   "type": "spritesheet",
+   "key": "b2-gun",
+   "url": "assets/boss2/b2-gun.png",
+   "frameWidth": 150,
+   "frameHeight": 150
+  },
+  {
+   "type": "spritesheet",
+   "key": "b2-missile",
+   "url": "assets/boss2/b2-missile.png",
+   "frameWidth": 9,
+   "frameHeight": 16
+  },
+  {
+   "type": "spritesheet",
+   "key": "b2-wave",
+   "url": "assets/boss2/b2-wave.png",
+   "frameWidth": 26,
+   "frameHeight": 16
+  },
+  {
+   "type": "spritesheet",
+   "key": "b2-chunks",
+   "url": "assets/boss2/b2-chunks.png",
+   "frameWidth": 9,
+   "frameHeight": 9
+  },
+  {
+   "type": "image",
+   "key": "b2-warheads",
+   "url": "assets/boss2/b2-warheads.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "b2-core",
+   "url": "assets/boss2/b2-core.png",
+   "frameWidth": 21,
+   "frameHeight": 21
+  }
+ ],
+ "anims": [
+  {
+   "key": "b2-missile-burn",
+   "texture": "b2-missile",
+   "start": 0,
+   "end": 1,
+   "frameRate": 16,
+   "repeat": -1
+  },
+  {
+   "key": "b2-wave-roll",
+   "texture": "b2-wave",
+   "start": 0,
+   "end": 2,
+   "frameRate": 14,
+   "repeat": -1
+  }
+ ]
+}

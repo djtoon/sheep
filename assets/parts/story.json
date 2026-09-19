@@ -1,0 +1,80 @@
+{
+ "assets": [
+  {
+   "type": "image",
+   "key": "story-p1",
+   "url": "assets/story/p1.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p2",
+   "url": "assets/story/p2.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p3",
+   "url": "assets/story/p3.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p4",
+   "url": "assets/story/p4.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p5",
+   "url": "assets/story/p5.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p6",
+   "url": "assets/story/p6.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p7",
+   "url": "assets/story/p7.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p8",
+   "url": "assets/story/p8.png"
+  },
+  {
+   "type": "image",
+   "key": "story-p9",
+   "url": "assets/story/p9.png"
+  },
+  {
+   "type": "image",
+   "key": "story-e1",
+   "url": "assets/story/e1.png"
+  },
+  {
+   "type": "image",
+   "key": "story-e2",
+   "url": "assets/story/e2.png"
+  },
+  {
+   "type": "image",
+   "key": "story-e3",
+   "url": "assets/story/e3.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "story-chopper",
+   "url": "assets/story/chopper.png",
+   "frameWidth": 104,
+   "frameHeight": 35
+  }
+ ],
+ "anims": [
+  {
+   "key": "story-chopper-fly",
+   "texture": "story-chopper",
+   "start": 0,
+   "end": 1,
+   "frameRate": 20
+  }
+ ]
+}

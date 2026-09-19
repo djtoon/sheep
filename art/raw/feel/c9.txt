@@ -1,0 +1,4 @@
+until done after 55.5 s game time
+clip shots/feel/c5_stage3_live.mp4 1111 frames
+print []
+stats {"fps":56,"scene":["Game","HUD"],"t":57091,"player":{"x":5160,"y":168,"vx":0,"vy":0,"lives":4,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4983,"enemies":0,"onscreen":0,"pShots":20,"eShots":0,"score":26500,"kills":106,"shots":353,"deaths":0,"paused":false,"boss":true,"cleared":false,"flow":"play"}

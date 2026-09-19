@@ -1,0 +1,109 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "b3-body",
+   "url": "assets/boss3/b3-body.png",
+   "frameWidth": 140,
+   "frameHeight": 131
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-tail",
+   "url": "assets/boss3/b3-tail.png",
+   "frameWidth": 190,
+   "frameHeight": 190
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-organ",
+   "url": "assets/boss3/b3-organ.png",
+   "frameWidth": 17,
+   "frameHeight": 17
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-cans",
+   "url": "assets/boss3/b3-cans.png",
+   "frameWidth": 16,
+   "frameHeight": 22
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-glass",
+   "url": "assets/boss3/b3-glass.png",
+   "frameWidth": 172,
+   "frameHeight": 118
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-charge",
+   "url": "assets/boss3/b3-charge.png",
+   "frameWidth": 13,
+   "frameHeight": 13
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-bolt",
+   "url": "assets/boss3/b3-bolt.png",
+   "frameWidth": 16,
+   "frameHeight": 6
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-acid",
+   "url": "assets/boss3/b3-acid.png",
+   "frameWidth": 10,
+   "frameHeight": 10
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-needle",
+   "url": "assets/boss3/b3-needle.png",
+   "frameWidth": 10,
+   "frameHeight": 4
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-shards",
+   "url": "assets/boss3/b3-shards.png",
+   "frameWidth": 6,
+   "frameHeight": 6
+  },
+  {
+   "type": "spritesheet",
+   "key": "b3-chunks",
+   "url": "assets/boss3/b3-chunks.png",
+   "frameWidth": 9,
+   "frameHeight": 9
+  },
+  {
+   "type": "image",
+   "key": "b3-window",
+   "url": "assets/boss3/b3-window.png"
+  },
+  {
+   "type": "image",
+   "key": "b3-cannon",
+   "url": "assets/boss3/b3-cannon.png"
+  }
+ ],
+ "anims": [
+  {
+   "key": "b3-bolt-fizz",
+   "texture": "b3-bolt",
+   "start": 0,
+   "end": 1,
+   "frameRate": 20,
+   "repeat": -1
+  },
+  {
+   "key": "b3-acid-wobble",
+   "texture": "b3-acid",
+   "start": 0,
+   "end": 1,
+   "frameRate": 10,
+   "repeat": -1
+  }
+ ]
+}

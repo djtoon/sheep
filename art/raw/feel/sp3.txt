@@ -1,0 +1,4 @@
+until done after 5.5 s game time
+clip shots/feel/s3_walker.mp4 111 frames
+print [[["start",4815],["end",6548,2561]],[]]
+stats {"fps":60,"scene":["Game","HUD"],"t":6815,"player":{"x":2917,"y":168,"vx":100,"vy":0,"lives":3,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":2589,"enemies":0,"onscreen":0,"pShots":5,"eShots":0,"score":3700,"kills":6,"shots":27,"deaths":0,"paused":false,"boss":false,"cleared":false,"flow":"play"}

@@ -6,6 +6,7 @@
 //           preceded by a laser sight (go prone). Enrages under half HP.
 //  Death:   hitstop + flash, chain explosions, debris, the gate sinks back into the ground, white-out, bossDefeated().
 // Art: assets/boss/* built by art/raw/boss/build_boss.py. Parts in scene.bossParts expose .damage(n).
+import { BossBar } from './bosskit.js';   // shared bottom boss strip (same as stages 2 and 3)
 let GY = 168;                                               // arena ground line, read from the level in the constructor
 const GUN_A0 = -10, GUN_A1 = 45, GUN_N = 12;                // barrel sheet angles: -10..45 step 5 (+ = down-left)
 const RISE = 150;                                           // tower starts fully below the ground line
@@ -56,8 +57,8 @@ export class BossWall {
       c.chip = (c.chip || 0) + n * 0.3;
       if (c.chip >= 1) { const d = Math.floor(c.chip); c.chip -= d; c.hp -= d; this.coreHit(d, true); if (c.hp <= 0) this.kill(c); }
     };
-    // core HP bar over the door frame (hard pixels; shown in phase 2)
-    this.hpBar = sc.add.graphics().setDepth(34).setVisible(false);
+    // boss HP: the shared bottom BossBar (was a small bar over the door frame)
+    this.bar = new BossBar(sc, 'IRON EAGLE GATE');
     for (const z of [...this.armor, this.doorZone]) z.body.enable = false;
     // lights (additive glow sprites)
     const G = (lx, ly, fr) => sc.add.image(X + lx, Y + ly, 'boss-lamp', fr).setDepth(33).setVisible(false);   // hard-pixel lit lamp, no additive blur
@@ -510,14 +511,9 @@ export class BossWall {
 
   // ---------------------------------------------------------------- lights / damage-state ambience
   drawHp() {
-    const g = this.hpBar, c = this.core, show = (this.state === 'p2' || this.state === 'trans') && !c.dead;
-    g.setVisible(show); if (!show) return;
-    const x = this.X + 29, y = this.Y + 84, w = 40, f = Math.max(0, Math.ceil(w * c.hp / c.maxHp));
-    g.clear();
-    g.fillStyle(0x1a1420, 1).fillRect(x - 1, y - 1, w + 2, 5);
-    g.fillStyle(0x4a1010, 1).fillRect(x, y, w, 3);
-    g.fillStyle(c.hp <= c.maxHp / 3 ? 0xff5a3a : 0xffc040, 1).fillRect(x, y, f, 3);
-    g.fillStyle(0xfff0c0, 1).fillRect(x, y, f, 1);
+    // campaign-wide bottom BossBar for the whole fight: the low cannon (phase 1), then the reactor core
+    const c = this.core, lo = this.low;
+    this.bar.set(this.state === 'p1' && !lo.dead ? c.maxHp + Math.max(0, lo.hp) : c.hp, c.maxHp + lo.maxHp, this.fighting() && !c.dead);
   }
   updLights(time) {
     this.drawHp();

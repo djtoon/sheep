@@ -1,0 +1,198 @@
+{
+ "assets": [
+  {
+   "type": "image",
+   "key": "s3-back",
+   "url": "assets/stage3/back.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-machines",
+   "url": "assets/stage3/machines.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-tank",
+   "url": "assets/stage3/tank.png",
+   "frameWidth": 52,
+   "frameHeight": 128
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-window",
+   "url": "assets/stage3/window.png",
+   "frameWidth": 116,
+   "frameHeight": 78
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-door-LAB_03",
+   "url": "assets/stage3/door-LAB_03.png",
+   "frameWidth": 104,
+   "frameHeight": 117
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-door-LAB_05",
+   "url": "assets/stage3/door-LAB_05.png",
+   "frameWidth": 104,
+   "frameHeight": 117
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-door-LAB_07",
+   "url": "assets/stage3/door-LAB_07.png",
+   "frameWidth": 104,
+   "frameHeight": 117
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk0",
+   "url": "assets/stage3/chunk0.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk1",
+   "url": "assets/stage3/chunk1.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk2",
+   "url": "assets/stage3/chunk2.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk3",
+   "url": "assets/stage3/chunk3.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk4",
+   "url": "assets/stage3/chunk4.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk5",
+   "url": "assets/stage3/chunk5.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk6",
+   "url": "assets/stage3/chunk6.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk7",
+   "url": "assets/stage3/chunk7.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk8",
+   "url": "assets/stage3/chunk8.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk9",
+   "url": "assets/stage3/chunk9.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk10",
+   "url": "assets/stage3/chunk10.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-chunk11",
+   "url": "assets/stage3/chunk11.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk0",
+   "url": "assets/stage3/bchunk0.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk1",
+   "url": "assets/stage3/bchunk1.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk2",
+   "url": "assets/stage3/bchunk2.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk3",
+   "url": "assets/stage3/bchunk3.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk4",
+   "url": "assets/stage3/bchunk4.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk5",
+   "url": "assets/stage3/bchunk5.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk6",
+   "url": "assets/stage3/bchunk6.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk7",
+   "url": "assets/stage3/bchunk7.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk8",
+   "url": "assets/stage3/bchunk8.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk9",
+   "url": "assets/stage3/bchunk9.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk10",
+   "url": "assets/stage3/bchunk10.png"
+  },
+  {
+   "type": "image",
+   "key": "s3-bchunk11",
+   "url": "assets/stage3/bchunk11.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-toxic0",
+   "url": "assets/stage3/toxic0.png",
+   "frameWidth": 180,
+   "frameHeight": 60
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-toxic1",
+   "url": "assets/stage3/toxic1.png",
+   "frameWidth": 240,
+   "frameHeight": 60
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-toxic2",
+   "url": "assets/stage3/toxic2.png",
+   "frameWidth": 200,
+   "frameHeight": 60
+  },
+  {
+   "type": "spritesheet",
+   "key": "s3-toxic3",
+   "url": "assets/stage3/toxic3.png",
+   "frameWidth": 220,
+   "frameHeight": 60
+  }
+ ],
+ "anims": []
+}

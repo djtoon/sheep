@@ -1,0 +1,8 @@
+file:///C:/sheep/tools/gen.mjs:37
+  p = await (await fetch(p.urls.get, { headers: H })).json();
+                                ^
+
+TypeError: Cannot read properties of undefined (reading 'get')
+    at file:///C:/sheep/tools/gen.mjs:37:33
+
+Node.js v24.16.0

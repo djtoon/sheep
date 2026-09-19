@@ -1,0 +1,190 @@
+{
+"assets": [
+{
+"type": "image",
+"key": "s2-sky",
+"url": "assets/stage2/sky.png"
+},
+{
+"type": "image",
+"key": "s2-mid",
+"url": "assets/stage2/mid.png"
+},
+{
+"type": "image",
+"key": "s2-floor",
+"url": "assets/stage2/floor.png"
+},
+{
+"type": "image",
+"key": "s2-floorB",
+"url": "assets/stage2/floorB.png"
+},
+{
+"type": "image",
+"key": "s2-floorC",
+"url": "assets/stage2/floorC.png"
+},
+{
+"type": "image",
+"key": "s2-compound",
+"url": "assets/stage2/compound.png"
+},
+{
+"type": "image",
+"key": "s2-scaffold",
+"url": "assets/stage2/scaffold.png"
+},
+{
+"type": "image",
+"key": "s2-fortress",
+"url": "assets/stage2/fortress.png"
+},
+{
+"type": "image",
+"key": "s2-lamp",
+"url": "assets/stage2/lamp.png"
+},
+{
+"type": "image",
+"key": "s2-crates2",
+"url": "assets/stage2/crates2.png"
+},
+{
+"type": "image",
+"key": "s2-crate",
+"url": "assets/stage2/crate.png"
+},
+{
+"type": "image",
+"key": "s2-drum",
+"url": "assets/stage2/drum.png"
+},
+{
+"type": "image",
+"key": "s2-drums",
+"url": "assets/stage2/drums.png"
+},
+{
+"type": "image",
+"key": "s2-fence",
+"url": "assets/stage2/fence.png"
+},
+{
+"type": "image",
+"key": "s2-watchtower",
+"url": "assets/stage2/watchtower.png"
+},
+{
+"type": "image",
+"key": "s2-radar",
+"url": "assets/stage2/radar.png"
+},
+{
+"type": "image",
+"key": "s2-searchlight",
+"url": "assets/stage2/searchlight.png"
+},
+{
+"type": "image",
+"key": "s2-big0",
+"url": "assets/stage2/big0.png"
+},
+{
+"type": "image",
+"key": "s2-big1",
+"url": "assets/stage2/big1.png"
+},
+{
+"type": "image",
+"key": "s2-big2",
+"url": "assets/stage2/big2.png"
+},
+{
+"type": "image",
+"key": "s2-big3",
+"url": "assets/stage2/big3.png"
+},
+{
+"type": "image",
+"key": "s2-big4",
+"url": "assets/stage2/big4.png"
+},
+{
+"type": "image",
+"key": "s2-big5",
+"url": "assets/stage2/big5.png"
+},
+{
+"type": "image",
+"key": "s2-big6",
+"url": "assets/stage2/big6.png"
+},
+{
+"type": "image",
+"key": "s2-big7",
+"url": "assets/stage2/big7.png"
+},
+{
+"type": "image",
+"key": "s2-tower0",
+"url": "assets/stage2/tower0.png"
+},
+{
+"type": "image",
+"key": "s2-tower1",
+"url": "assets/stage2/tower1.png"
+},
+{
+"type": "image",
+"key": "s2-tower2",
+"url": "assets/stage2/tower2.png"
+},
+{
+"type": "image",
+"key": "s2-tower3",
+"url": "assets/stage2/tower3.png"
+},
+{
+"type": "image",
+"key": "s2-tower4",
+"url": "assets/stage2/tower4.png"
+},
+{
+"type": "image",
+"key": "s2-tower5",
+"url": "assets/stage2/tower5.png"
+},
+{
+"type": "image",
+"key": "s2-tower6",
+"url": "assets/stage2/tower6.png"
+},
+{
+"type": "image",
+"key": "s2-tower7",
+"url": "assets/stage2/tower7.png"
+},
+{
+"type": "image",
+"key": "s2-tower8",
+"url": "assets/stage2/tower8.png"
+},
+{
+"type": "image",
+"key": "s2-tower9",
+"url": "assets/stage2/tower9.png"
+},
+{
+"type": "image",
+"key": "s2-tower10",
+"url": "assets/stage2/tower10.png"
+},
+{
+"type": "image",
+"key": "s2-tower11",
+"url": "assets/stage2/tower11.png"
+}
+],
+"anims": []
+}

@@ -40,6 +40,28 @@
       else if (o === 1 || o === 3) down = true;
       else if (o === 2 && !p.body.blocked.down) down = true;
     }
+    // big units (tank, mech, mutant, walker): hold a firing distance instead of walking into them
+    for (const e of s.enemies.getChildren()) if (e.active && !e.dead && (e.hp >= 8 || e.bigBoom) && !e.isCapsule && e.x - px > -12 && e.x - px < 130 && Math.abs(e.y - p.y) < 50) { right = false; break; }
+    // shields: jump over and shoot down into them (front shots ricochet)
+    const onG1 = p.body.blocked.down || p.body.touching.down;
+    if (best && best.e.blocks && !best.e.dead) {
+      const facingUs = best.e.flipX ? px > best.e.x : px < best.e.x;
+      if (facingUs) { right = best.dx > -40; left = !right; up = false; if (onG1 && Math.abs(best.dx) < 120) jump = true; if (!onG1) down = true; }
+    }
+    // mech gatling: read the tell like a player would - high stream (even pattern) = go prone, low stream = jump it
+    for (const e of s.enemies.getChildren()) {
+      if (!e.active || e.dead || e.pattern === undefined) continue;
+      const high = e.state === 'spin' ? e.pattern % 2 === 0 : e.state === 'fire' ? (e.pattern - 1) % 2 === 0 : null;
+      if (high !== null) window.__botHigh = high;
+      if (high === true && onG1) { inj.down = true; inj.fire = true; return; }
+    }
+    // stay down until the high stream has fully passed
+    if (window.__botHigh && onG1 && s.eBullets.getChildren().some(b => b.active && String(b.src).startsWith('mech') && Math.abs(b.x - px) < 160)) { inj.down = true; inj.fire = true; return; }
+    // beams / flames with a visible tell: go prone under a walker beam, back off a toxic
+    for (const e of s.enemies.getChildren()) {
+      if (!e.active) continue;
+      if (((e.state === 'charge' || e.state === 'beam') && e.beamRect !== undefined || e.tell) && Math.abs(e.y - p.y) < 20) { if (onG1) { inj.down = true; inj.fire = true; return; } }
+    }
     // hazards
     const onG = p.body.blocked.down || p.body.touching.down;
     const dir = left ? -1 : 1;

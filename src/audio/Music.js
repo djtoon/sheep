@@ -1,7 +1,9 @@
 // Music + mix bus. Tracks are pre-rendered OGGs (art/raw/audio/synth.py) with sample-accurate loop points
 // (audioData.js): an intro plays once, then [loopStart, loopEnd] loops gaplessly via a raw WebAudio BufferSource.
 //
-//   Music.play(scene, 'title' | 'stage1' | 'boss')   start a track (no-op if it is already playing)
+//   Music.play(scene, name)                          name: title | intro | stage1..3 | boss (stage 1) | boss2 | boss3 | ending
+//                                                    (no-op if already playing; campaign tracks lazy-load, see LAZY)
+//   Music.prefetch(scene, name)                      fetch+decode a lazy track ahead of time (returns a Promise)
 //   Music.stop(fadeMs = 300)                         fade out and stop the current track
 //   Music.sting('clear' | 'gameover' | 'warning', { then: 'boss' })
 //                                                    stop the music, play a one-shot jingle, optionally start a track after it
@@ -10,7 +12,20 @@
 //
 // Browsers keep the AudioContext suspended until a user gesture; anything requested before that is held and
 // starts the moment the context resumes (Phaser unlocks on the first key/pointer press).
-import { LOOPS } from './audioData.js';
+import { LOOPS, LAZY } from './audioData.js';
+
+// campaign tracks are not in the boot manifest: fetched + decoded on demand (and prefetched one step ahead)
+const inflight = {};
+const PREFETCH = { title: ['intro'], intro: [], stage1: [], stage2: ['boss2'], stage3: ['boss3', 'ending'] };
+export function ensureAudio(scene, key) {
+  const cache = scene.cache.audio, ctx = scene.sound && scene.sound.context;
+  if (cache.exists(key)) return Promise.resolve(true);
+  if (!LAZY[key] || !ctx) return Promise.resolve(false);
+  return inflight[key] || (inflight[key] = fetch(LAZY[key]).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+    .then(ab => new Promise((res, rej) => ctx.decodeAudioData(ab, res, rej)))
+    .then(buf => { if (!cache.exists(key)) cache.add(key, buf); delete inflight[key]; return true; })
+    .catch(e => { console.warn('music load failed', key, e && e.message); delete inflight[key]; return false; }));
+}
 
 export const MUSIC_VOL = 0.6, SFX_VOL = 1.0;
 const BUSES = new WeakMap();
@@ -63,8 +78,17 @@ export const Music = {
       if (scene.cache.audio.exists(key)) this.cur.sound = scene.sound.add(key, { loop: true, volume: MUSIC_VOL }), this.cur.sound.play();
       return;
     }
-    whenRunning(b, 'music', () => { if (tok === this.token) this._start(b, scene, key, true, opts.fadeIn || 0); });
+    ensureAudio(scene, key).then(() => {
+      if (tok !== this.token) return;
+      whenRunning(b, 'music', () => { if (tok === this.token) this._start(b, scene, key, true, opts.fadeIn || 0); });
+      // keep decoded memory low: drop lazy tracks we are not playing or about to need
+      const keep = new Set([key, ...(PREFETCH[name] || []).map(n => 'music-' + n)]);
+      for (const k in LAZY) if (!keep.has(k) && !inflight[k] && scene.cache.audio.exists(k)) scene.cache.audio.remove(k);
+      (PREFETCH[name] || []).forEach(n => this.prefetch(scene, n));
+    });
   },
+
+  prefetch(scene, name) { return ensureAudio(scene, 'music-' + name); },
 
   _start(b, scene, key, loop, fadeIn, onEnd) {
     const buf = scene.cache.audio.get(key);

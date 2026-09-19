@@ -1,0 +1,2 @@
+art/raw/stage2/towers_1.png
+art/raw/stage2/towers_2.png
