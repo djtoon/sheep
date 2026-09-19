@@ -1,0 +1,4 @@
+until done after 59.5 s game time
+trace art/raw/feel/run_live2.json 119
+print {"deaths":["1844:bullet:Turret@1880,136","3317:bullet:Turret@3440,144"],"kills":125,"flow":"play","t":61}
+stats {"fps":56,"scene":["Game","HUD"],"t":61465,"player":{"x":5160,"y":168,"vx":100,"vy":0,"lives":1,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4983,"enemies":1,"onscreen":0,"pShots":17,"eShots":0,"score":17500,"kills":125,"shots":241,"deaths":2,"paused":false,"boss":true,"cleared":false,"flow":"play"}

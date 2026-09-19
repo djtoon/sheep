@@ -1,0 +1,4 @@
+until done after 60 s game time
+clip shots/feel/r3_live_to_boss.mp4 1201 frames
+print ["1777:bullet:Drone@1818,62","3315:bullet:Turret@3440,144"]
+stats {"fps":56,"scene":["Game","HUD"],"t":63241,"player":{"x":5169,"y":168,"vx":100,"vy":0,"lives":1,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4991,"enemies":0,"onscreen":0,"pShots":17,"eShots":0,"score":16900,"kills":118,"shots":234,"deaths":2,"paused":false,"boss":true,"cleared":false,"flow":"play"}

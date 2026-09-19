@@ -1,0 +1,2 @@
+art/raw/hud/title_bg_1.png
+art/raw/hud/title_bg_2.png

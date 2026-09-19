@@ -1,0 +1,10 @@
+16-bit pixel art sprite sheet: an 8-frame RUN CYCLE animation of this exact enemy soldier (same character as the first reference image: round olive helmet, black face mask, glowing red goggles, green fatigues, backpack, black rifle held at hip pointing forward, brown boots, stocky chibi proportions). Side view, facing LEFT, running left. 8 frames in one horizontal row, evenly spaced, identical scale, all feet on the same ground line. The LEGS must change clearly every frame, like a classic Contra / Metal Slug run cycle:
+1) contact: front leg stretched far forward with heel down, back leg stretched far back, widest stride.
+2) down: front knee bent taking weight, back foot lifting off behind.
+3) passing: supporting leg straight under body, back leg knee lifted high and tucked under the hips.
+4) up: body highest, supporting foot pushing off on the toes, other thigh swinging forward, knee raised in front.
+5) contact on the other side: widest stride with the legs swapped.
+6) down, legs swapped.
+7) passing, legs swapped (other knee tucked up).
+8) up, legs swapped.
+Upper body and rifle stay nearly the same, bobbing 1 pixel. Thick dark outline, crisp hard-edged pixels, limited palette, strong shading. Transparent background, no ground, no shadow, no text, no glow.

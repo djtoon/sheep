@@ -1,0 +1,6 @@
+16-bit pixel art sprite sheet of an enemy soldier for a Metal Slug / Contra style run-and-gun, matching the soldiers in the reference screenshots exactly. METAL SLUG CHIBI PROPORTIONS: a BIG round olive helmet and head that is about ONE THIRD of the total figure height, broad chunky shoulders, compact sturdy legs. Black face mask under the helmet brim with two glowing red eyes. Green fatigues with strong shading and bright rim light on the helmet top and shoulders, black assault rifle, brown boots. Side view, facing LEFT. 4 poses in one horizontal row, evenly spaced, same scale, feet on the same ground line:
+1) standing UPRIGHT shooting stance: back straight, chest up, legs apart in a confident wide stance, rifle held LEVEL at shoulder height pointing straight left, both hands on the rifle.
+2) same upright stance firing: tiny recoil, shoulders pushed back 1 pixel (no muzzle flash).
+3) kneeling on one knee but torso fully UPRIGHT and tall, rifle held level at shoulder pointing straight left.
+4) same kneeling pose firing, tiny recoil (no muzzle flash).
+Not hunched, not crouching, heads up. Thick dark near-black outline around the whole silhouette, crisp hard-edged pixels, limited palette. Transparent background, no ground, no shadow, no text, no glow.

@@ -1,0 +1,2 @@
+clip shots/feel/spread.mp4 270 frames
+stats {"fps":58,"scene":["Game","HUD"],"t":18554,"player":{"x":3260,"y":170,"vx":100,"vy":-268,"lives":3,"ground":false,"spin":true,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":3083,"enemies":1,"onscreen":0,"pShots":13,"eShots":0,"score":2100,"kills":12,"shots":36,"deaths":0,"paused":false,"boss":false,"cleared":false,"flow":"play"}

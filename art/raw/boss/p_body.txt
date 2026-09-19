@@ -1,0 +1,9 @@
+2D side-scrolling run-and-gun game BOSS sprite, detailed 16-bit pixel art in exactly the style of the reference images (Metal Slug / Contra quality, crisp pixels, dark 1px outlines, same grey concrete, olive steel, red and yellow-black hazard palette).
+Subject: "The Iron Eagle Gate" - a huge fortified enemy bunker-gate war machine, shown front-on like the bunker building in the reference, filling the frame, taller than wide.
+- Thick weathered grey concrete bunker tower with bolted dark steel armor plates, heavy rivets, panel seams, chipped edges, a few moss/vine strands.
+- At the bottom centre: a massive closed armored blast door made of two sliding steel halves meeting in the middle, stenciled with a black eagle emblem, framed by yellow-black hazard stripes and two small amber lamps.
+- Upper body: a red hanging banner with the black eagle emblem, red warning beacon lights, exhaust vents, pipes and cables.
+- On the LEFT side of the facade, two protruding round steel ball-turret mounting collars (upper and middle) - EMPTY sockets, no guns in them.
+- On the roof: a squat armored missile/mortar launcher box with four tube hatches.
+- Flat bottom edge, sitting on nothing.
+Transparent background, no ground, no shadow, no characters, no text, no UI. Single object, centered, orthographic side-scroller view.

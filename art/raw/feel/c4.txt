@@ -1,0 +1,3 @@
+until done after 15.5 s game time
+clip shots/feel/live_deaths.mp4 311 frames
+stats {"fps":53,"scene":["Game","HUD"],"t":27013,"player":{"x":2014,"y":202,"vx":100,"vy":0,"lives":1,"ground":true,"spin":false,"prone":false,"dead":true,"invuln":0,"aim":[1,0],"facing":1,"weapon":"R"},"cam":1850,"enemies":2,"onscreen":2,"pShots":2,"eShots":1,"score":3100,"kills":20,"shots":64,"deaths":2,"paused":false,"boss":false,"cleared":false,"flow":"play"}

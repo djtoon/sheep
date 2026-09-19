@@ -1,0 +1,2 @@
+art/raw/terrain/pool_1.png
+art/raw/terrain/pool_2.png

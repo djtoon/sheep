@@ -1,0 +1,20 @@
+{
+  "name": "armed-and-fluffy",
+  "version": "1.0.0",
+  "description": "Armed and Fluffy - a Contra-style run-and-gun starring a commando sheep (Phaser 4)",
+  "main": "index.html",
+  "scripts": {
+    "start": "node tools/serve.mjs 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "phaser": "^4.2.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "private": true
+}

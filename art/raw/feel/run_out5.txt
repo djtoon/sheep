@@ -1,0 +1,4 @@
+until done after 57 s game time
+trace art/raw/feel/run_live5.json 114
+print {"deaths":["2147:bullet:Drone@2199,78"],"kills":125,"flow":"play","t":59}
+stats {"fps":55,"scene":["Game","HUD"],"t":59062,"player":{"x":5162,"y":168,"vx":100,"vy":0,"lives":2,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,0],"facing":1,"weapon":"S"},"cam":4985,"enemies":1,"onscreen":0,"pShots":17,"eShots":0,"score":18500,"kills":125,"shots":225,"deaths":1,"paused":false,"boss":true,"cleared":false,"flow":"play"}

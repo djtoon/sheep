@@ -1,0 +1,2 @@
+art/raw/terrain/spire_1.png
+art/raw/terrain/spire_2.png

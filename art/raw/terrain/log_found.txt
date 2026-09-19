@@ -1,0 +1,2 @@
+art/raw/terrain/found_1.png
+art/raw/terrain/found_2.png

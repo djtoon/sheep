@@ -1,0 +1,3 @@
+until done after 69.5 s game time
+clip shots/feel/stage_god.mp4 1391 frames
+stats {"fps":51,"scene":["Game","HUD"],"t":79998,"player":{"x":5197,"y":214,"vx":100,"vy":0,"lives":3,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[1,-1],"facing":1,"weapon":"S"},"cam":5020,"enemies":0,"onscreen":0,"pShots":17,"eShots":0,"score":14400,"kills":96,"shots":298,"deaths":0,"paused":false,"boss":true,"cleared":false,"flow":"play"}

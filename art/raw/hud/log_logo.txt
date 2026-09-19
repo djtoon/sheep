@@ -1,0 +1,2 @@
+art/raw/hud/logo_1.png
+art/raw/hud/logo_2.png

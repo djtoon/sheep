@@ -1,0 +1,2 @@
+art/raw/terrain/face2_1.png
+art/raw/terrain/face2_2.png

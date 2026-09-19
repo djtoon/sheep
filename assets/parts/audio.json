@@ -1,0 +1,145 @@
+{
+ "assets": [
+  {
+   "type": "audio",
+   "key": "music-boss",
+   "url": "assets/audio/music-boss.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "music-stage1",
+   "url": "assets/audio/music-stage1.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "music-title",
+   "url": "assets/audio/music-title.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-boom",
+   "url": "assets/audio/sfx-boom.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-boom-big",
+   "url": "assets/audio/sfx-boom-big.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-capsule",
+   "url": "assets/audio/sfx-capsule.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-count",
+   "url": "assets/audio/sfx-count.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-die",
+   "url": "assets/audio/sfx-die.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-enemy-die",
+   "url": "assets/audio/sfx-enemy-die.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-enemy-shot",
+   "url": "assets/audio/sfx-enemy-shot.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-extralife",
+   "url": "assets/audio/sfx-extralife.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-hit",
+   "url": "assets/audio/sfx-hit.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-jump",
+   "url": "assets/audio/sfx-jump.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-land",
+   "url": "assets/audio/sfx-land.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-laser",
+   "url": "assets/audio/sfx-laser.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-pause",
+   "url": "assets/audio/sfx-pause.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-pickup",
+   "url": "assets/audio/sfx-pickup.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-powerup",
+   "url": "assets/audio/sfx-powerup.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-select",
+   "url": "assets/audio/sfx-select.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-shoot",
+   "url": "assets/audio/sfx-shoot.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-shoot-m",
+   "url": "assets/audio/sfx-shoot-m.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-spread",
+   "url": "assets/audio/sfx-spread.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-start",
+   "url": "assets/audio/sfx-start.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sfx-telegraph",
+   "url": "assets/audio/sfx-telegraph.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sting-clear",
+   "url": "assets/audio/sting-clear.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sting-continue",
+   "url": "assets/audio/sting-continue.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sting-gameover",
+   "url": "assets/audio/sting-gameover.ogg"
+  },
+  {
+   "type": "audio",
+   "key": "sting-warning",
+   "url": "assets/audio/sting-warning.ogg"
+  }
+ ],
+ "anims": []
+}

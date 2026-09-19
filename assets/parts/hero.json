@@ -1,0 +1,179 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "sheep",
+   "url": "assets/hero/sheep.png",
+   "frameWidth": 96,
+   "frameHeight": 80
+  }
+ ],
+ "anims": [
+  {
+   "key": "sheep-idle",
+   "texture": "sheep",
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "frameRate": 7,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-run",
+   "texture": "sheep",
+   "frames": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "frameRate": 14,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-run-shoot",
+   "texture": "sheep",
+   "frames": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ],
+   "frameRate": 14,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-run-aimup",
+   "texture": "sheep",
+   "frames": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "frameRate": 14,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-run-aimdown",
+   "texture": "sheep",
+   "frames": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+   ],
+   "frameRate": 14,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-aimup",
+   "texture": "sheep",
+   "frames": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43
+   ],
+   "frameRate": 7,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-shoot",
+   "texture": "sheep",
+   "frames": [
+    44,
+    45
+   ],
+   "frameRate": 16,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-prone",
+   "texture": "sheep",
+   "frames": [
+    46,
+    47,
+    48,
+    49
+   ],
+   "frameRate": 6,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-jump",
+   "texture": "sheep",
+   "frames": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57
+   ],
+   "frameRate": 20,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-fall",
+   "texture": "sheep",
+   "frames": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "frameRate": 10,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-hurt",
+   "texture": "sheep",
+   "frames": [
+    62,
+    63,
+    64,
+    65
+   ],
+   "frameRate": 12,
+   "repeat": -1
+  },
+  {
+   "key": "sheep-die",
+   "texture": "sheep",
+   "frames": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "frameRate": 12,
+   "repeat": 0
+  }
+ ]
+}

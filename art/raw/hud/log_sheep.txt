@@ -1,0 +1,2 @@
+art/raw/hud/sheep_rock_1.png
+art/raw/hud/sheep_rock_2.png

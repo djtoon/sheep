@@ -1,0 +1,2 @@
+art/raw/terrain/cliff_1.png
+art/raw/terrain/cliff_2.png

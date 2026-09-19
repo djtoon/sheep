@@ -1,0 +1,2 @@
+art/raw/terrain/cliffblock_1.png
+art/raw/terrain/cliffblock_2.png

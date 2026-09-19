@@ -1,0 +1,211 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "muzzle",
+   "url": "assets/fx/muzzle.png",
+   "frameWidth": 44,
+   "frameHeight": 32
+  },
+  {
+   "type": "spritesheet",
+   "key": "muzzle-d",
+   "url": "assets/fx/muzzle-d.png",
+   "frameWidth": 38,
+   "frameHeight": 38
+  },
+  {
+   "type": "spritesheet",
+   "key": "muzzle-u",
+   "url": "assets/fx/muzzle-u.png",
+   "frameWidth": 32,
+   "frameHeight": 44
+  },
+  {
+   "type": "spritesheet",
+   "key": "muzzle-sm",
+   "url": "assets/fx/muzzle-sm.png",
+   "frameWidth": 20,
+   "frameHeight": 14
+  },
+  {
+   "type": "spritesheet",
+   "key": "fxb",
+   "url": "assets/fx/fxb.png",
+   "frameWidth": 24,
+   "frameHeight": 24
+  },
+  {
+   "type": "image",
+   "key": "bullet-player",
+   "url": "assets/fx/bullet-player.png"
+  },
+  {
+   "type": "image",
+   "key": "bullet-spread",
+   "url": "assets/fx/bullet-spread.png"
+  },
+  {
+   "type": "image",
+   "key": "bullet-laser",
+   "url": "assets/fx/bullet-laser.png"
+  },
+  {
+   "type": "image",
+   "key": "bullet-enemy",
+   "url": "assets/fx/bullet-enemy.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "hit",
+   "url": "assets/fx/hit.png",
+   "frameWidth": 24,
+   "frameHeight": 24
+  },
+  {
+   "type": "spritesheet",
+   "key": "hit-dirt",
+   "url": "assets/fx/hit-dirt.png",
+   "frameWidth": 20,
+   "frameHeight": 20
+  },
+  {
+   "type": "spritesheet",
+   "key": "explosion-sm",
+   "url": "assets/fx/explosion-sm.png",
+   "frameWidth": 32,
+   "frameHeight": 32
+  },
+  {
+   "type": "spritesheet",
+   "key": "explosion",
+   "url": "assets/fx/explosion.png",
+   "frameWidth": 48,
+   "frameHeight": 48
+  },
+  {
+   "type": "spritesheet",
+   "key": "explosion-big",
+   "url": "assets/fx/explosion-big.png",
+   "frameWidth": 64,
+   "frameHeight": 64
+  },
+  {
+   "type": "spritesheet",
+   "key": "puff",
+   "url": "assets/fx/puff.png",
+   "frameWidth": 16,
+   "frameHeight": 16
+  },
+  {
+   "type": "spritesheet",
+   "key": "dust",
+   "url": "assets/fx/dust.png",
+   "frameWidth": 32,
+   "frameHeight": 12
+  },
+  {
+   "type": "spritesheet",
+   "key": "debris",
+   "url": "assets/fx/debris.png",
+   "frameWidth": 6,
+   "frameHeight": 6
+  },
+  {
+   "type": "spritesheet",
+   "key": "casing",
+   "url": "assets/fx/casing.png",
+   "frameWidth": 5,
+   "frameHeight": 5
+  },
+  {
+   "type": "spritesheet",
+   "key": "twinkle",
+   "url": "assets/fx/twinkle.png",
+   "frameWidth": 11,
+   "frameHeight": 11
+  },
+  {
+   "type": "spritesheet",
+   "key": "ring",
+   "url": "assets/fx/ring.png",
+   "frameWidth": 32,
+   "frameHeight": 32
+  },
+  {
+   "type": "spritesheet",
+   "key": "px",
+   "url": "assets/fx/px.png",
+   "frameWidth": 4,
+   "frameHeight": 4
+  },
+  {
+   "type": "image",
+   "key": "spark",
+   "url": "assets/fx/spark.png"
+  },
+  {
+   "type": "image",
+   "key": "smoke",
+   "url": "assets/fx/smoke.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "shard",
+   "url": "assets/fx/shard.png",
+   "frameWidth": 7,
+   "frameHeight": 3
+  },
+  {
+   "type": "spritesheet",
+   "key": "ebolt",
+   "url": "assets/fx/ebolt.png",
+   "frameWidth": 40,
+   "frameHeight": 40
+  },
+  {
+   "type": "image",
+   "key": "rotor",
+   "url": "assets/fx/rotor.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "glint",
+   "url": "assets/fx/glint.png",
+   "frameWidth": 7,
+   "frameHeight": 7
+  },
+  {
+   "type": "spritesheet",
+   "key": "digits",
+   "url": "assets/fx/digits.png",
+   "frameWidth": 7,
+   "frameHeight": 9
+  },
+  {
+   "type": "spritesheet",
+   "key": "killflash",
+   "url": "assets/fx/killflash.png",
+   "frameWidth": 56,
+   "frameHeight": 56
+  }
+ ],
+ "anims": [
+  {
+   "key": "muzzle-flash",
+   "texture": "muzzle",
+   "start": 0,
+   "end": 3,
+   "frameRate": 40,
+   "repeat": 0
+  },
+  {
+   "key": "explode",
+   "texture": "explosion",
+   "start": 0,
+   "end": 10,
+   "frameRate": 18,
+   "repeat": 0
+  }
+ ]
+}

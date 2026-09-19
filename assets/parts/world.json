@@ -1,0 +1,187 @@
+{
+ "assets": [
+  {
+   "type": "image",
+   "key": "bg-sky",
+   "url": "assets/world/sky.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-clouds",
+   "url": "assets/world/clouds.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-far",
+   "url": "assets/world/far.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-hills",
+   "url": "assets/world/hills.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs",
+   "url": "assets/world/cliffs.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-1",
+   "url": "assets/world/cliffs-1.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-2",
+   "url": "assets/world/cliffs-2.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-3",
+   "url": "assets/world/cliffs-3.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-canopy",
+   "url": "assets/world/canopy.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-base",
+   "url": "assets/world/base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-farcliffs",
+   "url": "assets/world/farcliffs.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-midtrees",
+   "url": "assets/world/midtrees.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-overhang",
+   "url": "assets/world/overhang.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near",
+   "url": "assets/world/near.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-1",
+   "url": "assets/world/near-1.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-2",
+   "url": "assets/world/near-2.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-3",
+   "url": "assets/world/near-3.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-outpost0",
+   "url": "assets/world/outpost0.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-outpost1",
+   "url": "assets/world/outpost1.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-outpost2",
+   "url": "assets/world/outpost2.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-outbridge",
+   "url": "assets/world/outbridge.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-overhang-thin",
+   "url": "assets/world/overhang-thin.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-midset",
+   "url": "assets/world/midset.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-base",
+   "url": "assets/world/near-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-1-base",
+   "url": "assets/world/near-1-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-2-base",
+   "url": "assets/world/near-2-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-near-3-base",
+   "url": "assets/world/near-3-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-base",
+   "url": "assets/world/cliffs-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-1-base",
+   "url": "assets/world/cliffs-1-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-2-base",
+   "url": "assets/world/cliffs-2-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-cliffs-3-base",
+   "url": "assets/world/cliffs-3-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-midtrees-base",
+   "url": "assets/world/midtrees-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-canopy-base",
+   "url": "assets/world/canopy-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-hills-base",
+   "url": "assets/world/hills-base.png"
+  },
+  {
+   "type": "image",
+   "key": "bg-farcliffs-base",
+   "url": "assets/world/farcliffs-base.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "bg-bird",
+   "url": "assets/world/bird.png",
+   "frameWidth": 9,
+   "frameHeight": 5
+  }
+ ],
+ "anims": []
+}

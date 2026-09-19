@@ -1,0 +1,2 @@
+art/raw/terrain/bridges_1.png
+art/raw/terrain/bridges_2.png

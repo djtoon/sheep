@@ -1,0 +1,2 @@
+art/raw/terrain/rocks_1.png
+art/raw/terrain/rocks_2.png

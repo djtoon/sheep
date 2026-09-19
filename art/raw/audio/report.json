@@ -1,0 +1,326 @@
+{
+ "items": [
+  {
+   "key": "music-stage1",
+   "kind": "music",
+   "dur": 76.8,
+   "loop": 6.4,
+   "lufs": -15.0,
+   "peak": -1.53,
+   "tp": -1.31,
+   "rms50": -13.2,
+   "kb": 1492.9
+  },
+  {
+   "key": "music-title",
+   "kind": "music",
+   "dur": 20.69,
+   "loop": 4.137931034482759,
+   "lufs": -15.0,
+   "peak": -2.62,
+   "tp": -2.49,
+   "rms50": -13.3,
+   "kb": 426.4
+  },
+  {
+   "key": "music-boss",
+   "kind": "music",
+   "dur": 22.326,
+   "loop": 0.0,
+   "lufs": -14.5,
+   "peak": -1.5,
+   "tp": -1.45,
+   "rms50": -13.3,
+   "kb": 437.4
+  },
+  {
+   "key": "sting-clear",
+   "kind": "music",
+   "dur": 5.64,
+   "loop": null,
+   "lufs": -14.0,
+   "peak": -2.23,
+   "tp": -2.09,
+   "rms50": -12.6,
+   "kb": 115.1
+  },
+  {
+   "key": "sting-gameover",
+   "kind": "music",
+   "dur": 7.484,
+   "loop": null,
+   "lufs": -16.0,
+   "peak": -3.94,
+   "tp": -3.66,
+   "rms50": -14.3,
+   "kb": 164.3
+  },
+  {
+   "key": "sting-warning",
+   "kind": "music",
+   "dur": 2.6,
+   "loop": null,
+   "lufs": -13.1,
+   "peak": -1.5,
+   "tp": -1.11,
+   "rms50": -11.3,
+   "kb": 45.2
+  },
+  {
+   "key": "sfx-shoot",
+   "kind": "sfx",
+   "dur": 0.16,
+   "loop": null,
+   "lufs": -24.2,
+   "peak": -5.16,
+   "tp": -4.95,
+   "rms50": -14.0,
+   "kb": 6.3
+  },
+  {
+   "key": "sfx-shoot-m",
+   "kind": "sfx",
+   "dur": 0.1,
+   "loop": null,
+   "lufs": -26.2,
+   "peak": -2.79,
+   "tp": -2.78,
+   "rms50": -15.5,
+   "kb": 5.4
+  },
+  {
+   "key": "sfx-spread",
+   "kind": "sfx",
+   "dur": 0.24,
+   "loop": null,
+   "lufs": -21.7,
+   "peak": -4.67,
+   "tp": -3.41,
+   "rms50": -13.5,
+   "kb": 6.9
+  },
+  {
+   "key": "sfx-laser",
+   "kind": "sfx",
+   "dur": 0.3,
+   "loop": null,
+   "lufs": -23.3,
+   "peak": -5.5,
+   "tp": -5.49,
+   "rms50": -14.0,
+   "kb": 8.0
+  },
+  {
+   "key": "sfx-enemy-shot",
+   "kind": "sfx",
+   "dur": 0.12,
+   "loop": null,
+   "lufs": -28.3,
+   "peak": -6.35,
+   "tp": -6.32,
+   "rms50": -18.5,
+   "kb": 5.5
+  },
+  {
+   "key": "sfx-hit",
+   "kind": "sfx",
+   "dur": 0.07,
+   "loop": null,
+   "lufs": -29.5,
+   "peak": -9.71,
+   "tp": -8.87,
+   "rms50": -20.0,
+   "kb": 5.1
+  },
+  {
+   "key": "sfx-enemy-die",
+   "kind": "sfx",
+   "dur": 0.36,
+   "loop": null,
+   "lufs": -21.6,
+   "peak": -5.24,
+   "tp": -5.09,
+   "rms50": -12.5,
+   "kb": 8.3
+  },
+  {
+   "key": "sfx-boom",
+   "kind": "sfx",
+   "dur": 0.7,
+   "loop": null,
+   "lufs": -15.6,
+   "peak": -3.96,
+   "tp": -2.51,
+   "rms50": -9.5,
+   "kb": 12.6
+  },
+  {
+   "key": "sfx-boom-big",
+   "kind": "sfx",
+   "dur": 1.5,
+   "loop": null,
+   "lufs": -13.2,
+   "peak": -2.5,
+   "tp": -1.93,
+   "rms50": -8.0,
+   "kb": 23.5
+  },
+  {
+   "key": "sfx-jump",
+   "kind": "sfx",
+   "dur": 0.14,
+   "loop": null,
+   "lufs": -28.1,
+   "peak": -11.85,
+   "tp": -11.68,
+   "rms50": -19.0,
+   "kb": 6.1
+  },
+  {
+   "key": "sfx-land",
+   "kind": "sfx",
+   "dur": 0.1,
+   "loop": null,
+   "lufs": -34.9,
+   "peak": -15.57,
+   "tp": -15.56,
+   "rms50": -22.0,
+   "kb": 5.1
+  },
+  {
+   "key": "sfx-pickup",
+   "kind": "sfx",
+   "dur": 0.62,
+   "loop": null,
+   "lufs": -15.4,
+   "peak": -1.5,
+   "tp": -1.39,
+   "rms50": -13.7,
+   "kb": 13.8
+  },
+  {
+   "key": "sfx-die",
+   "kind": "sfx",
+   "dur": 1.05,
+   "loop": null,
+   "lufs": -10.7,
+   "peak": -3.16,
+   "tp": -1.62,
+   "rms50": -9.0,
+   "kb": 17.4
+  },
+  {
+   "key": "sfx-capsule",
+   "kind": "sfx",
+   "dur": 0.3,
+   "loop": null,
+   "lufs": -21.2,
+   "peak": -4.55,
+   "tp": -3.9,
+   "rms50": -13.0,
+   "kb": 7.7
+  },
+  {
+   "key": "sfx-select",
+   "kind": "sfx",
+   "dur": 0.1,
+   "loop": null,
+   "lufs": -26.0,
+   "peak": -10.29,
+   "tp": -10.24,
+   "rms50": -18.0,
+   "kb": 5.8
+  },
+  {
+   "key": "sfx-start",
+   "kind": "sfx",
+   "dur": 0.8,
+   "loop": null,
+   "lufs": -20.6,
+   "peak": -1.61,
+   "tp": -1.22,
+   "rms50": -13.0,
+   "kb": 14.0
+  },
+  {
+   "key": "sting-continue",
+   "kind": "music",
+   "dur": 3.02,
+   "loop": null,
+   "lufs": -14.0,
+   "peak": -1.5,
+   "tp": -1.25,
+   "rms50": -12.6,
+   "kb": 55.0
+  },
+  {
+   "key": "sfx-pause",
+   "kind": "sfx",
+   "dur": 0.375,
+   "loop": null,
+   "lufs": -18.6,
+   "peak": -3.57,
+   "tp": -3.43,
+   "rms50": -17.0,
+   "kb": 9.6
+  },
+  {
+   "key": "sfx-telegraph",
+   "kind": "sfx",
+   "dur": 0.08,
+   "loop": null,
+   "lufs": -33.0,
+   "peak": -11.11,
+   "tp": -10.95,
+   "rms50": -24.0,
+   "kb": 5.2
+  },
+  {
+   "key": "sfx-count",
+   "kind": "sfx",
+   "dur": 0.12,
+   "loop": null,
+   "lufs": -29.4,
+   "peak": -11.57,
+   "tp": -11.44,
+   "rms50": -19.0,
+   "kb": 5.8
+  },
+  {
+   "key": "sfx-extralife",
+   "kind": "sfx",
+   "dur": 1.019,
+   "loop": null,
+   "lufs": -13.6,
+   "peak": -3.6,
+   "tp": -3.51,
+   "rms50": -13.0,
+   "kb": 19.7
+  },
+  {
+   "key": "sfx-powerup",
+   "kind": "sfx",
+   "dur": 0.95,
+   "loop": null,
+   "lufs": -17.1,
+   "peak": -2.26,
+   "tp": -2.25,
+   "rms50": -13.0,
+   "kb": 18.9
+  }
+ ],
+ "loops": {
+  "music-stage1": {
+   "loopStart": 6.4,
+   "loopEnd": 76.8
+  },
+  "music-title": {
+   "loopStart": 4.137931,
+   "loopEnd": 20.68966
+  },
+  "music-boss": {
+   "loopStart": 0.0,
+   "loopEnd": 22.325578
+  }
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "soldier",
+   "url": "assets/enemies/soldier.png",
+   "frameWidth": 56,
+   "frameHeight": 44
+  },
+  {
+   "type": "spritesheet",
+   "key": "turret",
+   "url": "assets/enemies/turret.png",
+   "frameWidth": 66,
+   "frameHeight": 58
+  },
+  {
+   "type": "spritesheet",
+   "key": "drone",
+   "url": "assets/enemies/drone.png",
+   "frameWidth": 44,
+   "frameHeight": 33
+  },
+  {
+   "type": "image",
+   "key": "capsule",
+   "url": "assets/enemies/capsule.png"
+  },
+  {
+   "type": "image",
+   "key": "pickup-M",
+   "url": "assets/enemies/pickup-M.png"
+  },
+  {
+   "type": "image",
+   "key": "pickup-S",
+   "url": "assets/enemies/pickup-S.png"
+  },
+  {
+   "type": "image",
+   "key": "pickup-L",
+   "url": "assets/enemies/pickup-L.png"
+  }
+ ],
+ "anims": [
+  {
+   "key": "soldier-run",
+   "texture": "soldier",
+   "start": 0,
+   "end": 7,
+   "frameRate": 14
+  },
+  {
+   "key": "soldier-aim",
+   "texture": "soldier",
+   "frames": [
+    8
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "soldier-shoot",
+   "texture": "soldier",
+   "frames": [
+    9,
+    9,
+    8
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "soldier-kneel-aim",
+   "texture": "soldier",
+   "frames": [
+    10
+   ],
+   "frameRate": 1
+  },
+  {
+   "key": "soldier-kneel-shoot",
+   "texture": "soldier",
+   "frames": [
+    11,
+    11,
+    10
+   ],
+   "frameRate": 14,
+   "repeat": 0
+  },
+  {
+   "key": "soldier-die",
+   "texture": "soldier",
+   "frames": [
+    12,
+    13,
+    14,
+    15
+   ],
+   "frameRate": 8,
+   "repeat": 0
+  },
+  {
+   "key": "turret-idle",
+   "texture": "turret",
+   "frames": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "frameRate": 6
+  },
+  {
+   "key": "turret-fire",
+   "texture": "turret",
+   "frames": [
+    2,
+    3,
+    0,
+    2,
+    3,
+    0
+   ],
+   "frameRate": 18,
+   "repeat": 0
+  },
+  {
+   "key": "drone-fly",
+   "texture": "drone",
+   "start": 0,
+   "end": 3,
+   "frameRate": 20
+  }
+ ]
+}

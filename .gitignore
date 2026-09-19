@@ -1,0 +1,13 @@
+node_modules/
+.ab_keys.txt
+# dev captures and critic artifacts (several GB)
+shots/
+progress/
+progress.html
+# raw generations and intermediates (rebuildable via art/raw scripts + tools/gen.mjs)
+art/raw/**/*.png
+art/raw/**/*.webp
+art/raw/**/*.jpg
+art/raw/**/*.npy
+art/raw/**/*.wav
+art/raw/**/*.mp4

@@ -1,0 +1,2 @@
+art/raw/terrain/bushes_1.png
+art/raw/terrain/bushes_2.png

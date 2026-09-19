@@ -1,0 +1,605 @@
+{
+"assets": [
+{
+"type": "image",
+"key": "tr-cliff",
+"url": "assets/terrain/cliff.png"
+},
+{
+"type": "image",
+"key": "tr-grass",
+"url": "assets/terrain/grass.png"
+},
+{
+"type": "image",
+"key": "tr-cap-l",
+"url": "assets/terrain/cap-l.png"
+},
+{
+"type": "image",
+"key": "tr-cap-r",
+"url": "assets/terrain/cap-r.png"
+},
+{
+"type": "image",
+"key": "tr-cliffblock",
+"url": "assets/terrain/cliffblock.png"
+},
+{
+"type": "image",
+"key": "tr-concrete",
+"url": "assets/terrain/concrete.png"
+},
+{
+"type": "image",
+"key": "tr-pool",
+"url": "assets/terrain/pool.png"
+},
+{
+"type": "image",
+"key": "tr-vine0",
+"url": "assets/terrain/vine0.png"
+},
+{
+"type": "image",
+"key": "tr-vine1",
+"url": "assets/terrain/vine1.png"
+},
+{
+"type": "image",
+"key": "tr-vine2",
+"url": "assets/terrain/vine2.png"
+},
+{
+"type": "image",
+"key": "tr-vine3",
+"url": "assets/terrain/vine3.png"
+},
+{
+"type": "image",
+"key": "tr-vine4",
+"url": "assets/terrain/vine4.png"
+},
+{
+"type": "image",
+"key": "tr-vine5",
+"url": "assets/terrain/vine5.png"
+},
+{
+"type": "image",
+"key": "tr-vine6",
+"url": "assets/terrain/vine6.png"
+},
+{
+"type": "image",
+"key": "tr-vine7",
+"url": "assets/terrain/vine7.png"
+},
+{
+"type": "image",
+"key": "tr-vine8",
+"url": "assets/terrain/vine8.png"
+},
+{
+"type": "image",
+"key": "tr-vine9",
+"url": "assets/terrain/vine9.png"
+},
+{
+"type": "image",
+"key": "tr-bush0",
+"url": "assets/terrain/bush0.png"
+},
+{
+"type": "image",
+"key": "tr-bush1",
+"url": "assets/terrain/bush1.png"
+},
+{
+"type": "image",
+"key": "tr-bush2",
+"url": "assets/terrain/bush2.png"
+},
+{
+"type": "image",
+"key": "tr-bush3",
+"url": "assets/terrain/bush3.png"
+},
+{
+"type": "image",
+"key": "tr-bush4",
+"url": "assets/terrain/bush4.png"
+},
+{
+"type": "image",
+"key": "tr-bush5",
+"url": "assets/terrain/bush5.png"
+},
+{
+"type": "image",
+"key": "tr-bush6",
+"url": "assets/terrain/bush6.png"
+},
+{
+"type": "image",
+"key": "tr-bush7",
+"url": "assets/terrain/bush7.png"
+},
+{
+"type": "image",
+"key": "tr-bush8",
+"url": "assets/terrain/bush8.png"
+},
+{
+"type": "image",
+"key": "tr-bush9",
+"url": "assets/terrain/bush9.png"
+},
+{
+"type": "image",
+"key": "tr-bush10",
+"url": "assets/terrain/bush10.png"
+},
+{
+"type": "image",
+"key": "tr-bush11",
+"url": "assets/terrain/bush11.png"
+},
+{
+"type": "image",
+"key": "tr-rock0",
+"url": "assets/terrain/rock0.png"
+},
+{
+"type": "image",
+"key": "tr-rock1",
+"url": "assets/terrain/rock1.png"
+},
+{
+"type": "image",
+"key": "tr-rock2",
+"url": "assets/terrain/rock2.png"
+},
+{
+"type": "image",
+"key": "tr-rock3",
+"url": "assets/terrain/rock3.png"
+},
+{
+"type": "image",
+"key": "tr-rock4",
+"url": "assets/terrain/rock4.png"
+},
+{
+"type": "image",
+"key": "tr-rock5",
+"url": "assets/terrain/rock5.png"
+},
+{
+"type": "image",
+"key": "tr-rock6",
+"url": "assets/terrain/rock6.png"
+},
+{
+"type": "image",
+"key": "tr-rock7",
+"url": "assets/terrain/rock7.png"
+},
+{
+"type": "image",
+"key": "tr-rock8",
+"url": "assets/terrain/rock8.png"
+},
+{
+"type": "image",
+"key": "tr-rock9",
+"url": "assets/terrain/rock9.png"
+},
+{
+"type": "image",
+"key": "tr-rock10",
+"url": "assets/terrain/rock10.png"
+},
+{
+"type": "image",
+"key": "tr-rock11",
+"url": "assets/terrain/rock11.png"
+},
+{
+"type": "image",
+"key": "tr-bunker",
+"url": "assets/terrain/bunker.png"
+},
+{
+"type": "image",
+"key": "tr-bunker2",
+"url": "assets/terrain/bunker2.png"
+},
+{
+"type": "image",
+"key": "tr-crate-eagle",
+"url": "assets/terrain/crate-eagle.png"
+},
+{
+"type": "image",
+"key": "tr-crate",
+"url": "assets/terrain/crate.png"
+},
+{
+"type": "image",
+"key": "tr-ammo",
+"url": "assets/terrain/ammo.png"
+},
+{
+"type": "image",
+"key": "tr-sandbags",
+"url": "assets/terrain/sandbags.png"
+},
+{
+"type": "image",
+"key": "tr-drum",
+"url": "assets/terrain/drum.png"
+},
+{
+"type": "image",
+"key": "tr-ladder",
+"url": "assets/terrain/ladder.png"
+},
+{
+"type": "image",
+"key": "tr-banner",
+"url": "assets/terrain/banner.png"
+},
+{
+"type": "image",
+"key": "tr-crates2",
+"url": "assets/terrain/crates2.png"
+},
+{
+"type": "image",
+"key": "tr-doorway",
+"url": "assets/terrain/doorway.png"
+},
+{
+"type": "image",
+"key": "tr-door-eagle",
+"url": "assets/terrain/door-eagle.png"
+},
+{
+"type": "image",
+"key": "tr-fence",
+"url": "assets/terrain/fence.png"
+},
+{
+"type": "image",
+"key": "tr-tower",
+"url": "assets/terrain/tower.png"
+},
+{
+"type": "image",
+"key": "tr-lamp",
+"url": "assets/terrain/lamp.png"
+},
+{
+"type": "image",
+"key": "tr-bigdoor",
+"url": "assets/terrain/bigdoor.png"
+},
+{
+"type": "image",
+"key": "tr-door2",
+"url": "assets/terrain/door2.png"
+},
+{
+"type": "image",
+"key": "tr-tower2",
+"url": "assets/terrain/tower2.png"
+},
+{
+"type": "image",
+"key": "tr-fence2",
+"url": "assets/terrain/fence2.png"
+},
+{
+"type": "image",
+"key": "tr-lamp2",
+"url": "assets/terrain/lamp2.png"
+},
+{
+"type": "image",
+"key": "tr-ropebridge",
+"url": "assets/terrain/ropebridge.png"
+},
+{
+"type": "image",
+"key": "tr-steelbridge-raw",
+"url": "assets/terrain/steelbridge-raw.png"
+},
+{
+"type": "image",
+"key": "tr-fg-leaves-l",
+"url": "assets/terrain/fg-leaves-l.png"
+},
+{
+"type": "image",
+"key": "tr-fg-leaves-r",
+"url": "assets/terrain/fg-leaves-r.png"
+},
+{
+"type": "image",
+"key": "tr-fg-leaves-l2",
+"url": "assets/terrain/fg-leaves-l2.png"
+},
+{
+"type": "image",
+"key": "tr-fg-leaves-r2",
+"url": "assets/terrain/fg-leaves-r2.png"
+},
+{
+"type": "spritesheet",
+"key": "tr-spill",
+"url": "assets/terrain/spill.png",
+"frameWidth": 48,
+"frameHeight": 44
+},
+{
+"type": "spritesheet",
+"key": "tr-spill-wide",
+"url": "assets/terrain/spill-wide.png",
+"frameWidth": 72,
+"frameHeight": 44
+},
+{
+"type": "spritesheet",
+"key": "tr-fall-tall",
+"url": "assets/terrain/fall-tall.png",
+"frameWidth": 44,
+"frameHeight": 100
+},
+{
+"type": "spritesheet",
+"key": "tr-fall-curtain",
+"url": "assets/terrain/fall-curtain.png",
+"frameWidth": 36,
+"frameHeight": 84
+},
+{
+"type": "spritesheet",
+"key": "tr-splash",
+"url": "assets/terrain/splash.png",
+"frameWidth": 56,
+"frameHeight": 18
+},
+{
+"type": "spritesheet",
+"key": "tr-cascade",
+"url": "assets/terrain/cascade.png",
+"frameWidth": 128,
+"frameHeight": 60
+},
+{
+"type": "spritesheet",
+"key": "tr-splash-wide",
+"url": "assets/terrain/splash-wide.png",
+"frameWidth": 132,
+"frameHeight": 20
+},
+{
+"type": "image",
+"key": "tr-fence-plain",
+"url": "assets/terrain/fence-plain.png"
+},
+{
+"type": "spritesheet",
+"key": "tr-basin",
+"url": "assets/terrain/basin.png",
+"frameWidth": 128,
+"frameHeight": 52
+},
+{
+"type": "spritesheet",
+"key": "tr-foamring",
+"url": "assets/terrain/foamring.png",
+"frameWidth": 48,
+"frameHeight": 10
+},
+{
+"type": "spritesheet",
+"key": "tr-mist",
+"url": "assets/terrain/mist.png",
+"frameWidth": 44,
+"frameHeight": 28
+},
+{
+"type": "image",
+"key": "tr-fence-solid",
+"url": "assets/terrain/fence-solid.png"
+},
+{
+"type": "image",
+"key": "tr-fence-plain-solid",
+"url": "assets/terrain/fence-plain-solid.png"
+},
+{
+"type": "spritesheet",
+"key": "tr-tiers",
+"url": "assets/terrain/tiers.png",
+"frameWidth": 150,
+"frameHeight": 98
+},
+{
+"type": "spritesheet",
+"key": "tr-churn",
+"url": "assets/terrain/churn.png",
+"frameWidth": 24,
+"frameHeight": 7
+},
+{
+"type": "spritesheet",
+"key": "tr-gorge-300",
+"url": "assets/terrain/gorge-300.png",
+"frameWidth": 300,
+"frameHeight": 118
+},
+{
+"type": "spritesheet",
+"key": "tr-gorge-320",
+"url": "assets/terrain/gorge-320.png",
+"frameWidth": 320,
+"frameHeight": 118
+},
+{
+"type": "spritesheet",
+"key": "tr-gorge-260",
+"url": "assets/terrain/gorge-260.png",
+"frameWidth": 260,
+"frameHeight": 118
+},
+{
+"type": "spritesheet",
+"key": "tr-gorge-280",
+"url": "assets/terrain/gorge-280.png",
+"frameWidth": 280,
+"frameHeight": 118
+},
+{
+"type": "image",
+"key": "tr-face",
+"url": "assets/terrain/face.png"
+},
+{
+"type": "image",
+"key": "tr-found",
+"url": "assets/terrain/found.png"
+},
+{
+"type": "image",
+"key": "tr-spire",
+"url": "assets/terrain/spire.png"
+},
+{
+"type": "image",
+"key": "tr-face2",
+"url": "assets/terrain/face2.png"
+},
+{
+"type": "image",
+"key": "tr-face3",
+"url": "assets/terrain/face3.png"
+}
+],
+"anims": [
+{
+"key": "tr-spill",
+"texture": "tr-spill",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-spill-wide",
+"texture": "tr-spill-wide",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-fall-tall",
+"texture": "tr-fall-tall",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-fall-curtain",
+"texture": "tr-fall-curtain",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-splash",
+"texture": "tr-splash",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-cascade",
+"texture": "tr-cascade",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-splash-wide",
+"texture": "tr-splash-wide",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-basin",
+"texture": "tr-basin",
+"start": 0,
+"end": 7,
+"frameRate": 8
+},
+{
+"key": "tr-foamring",
+"texture": "tr-foamring",
+"start": 0,
+"end": 7,
+"frameRate": 12
+},
+{
+"key": "tr-mist",
+"texture": "tr-mist",
+"start": 0,
+"end": 7,
+"frameRate": 12
+},
+{
+"key": "tr-tiers",
+"texture": "tr-tiers",
+"start": 0,
+"end": 11,
+"frameRate": 14
+},
+{
+"key": "tr-churn",
+"texture": "tr-churn",
+"start": 0,
+"end": 7,
+"frameRate": 9
+},
+{
+"key": "tr-gorge-300",
+"texture": "tr-gorge-300",
+"start": 0,
+"end": 3,
+"frameRate": 8
+},
+{
+"key": "tr-gorge-320",
+"texture": "tr-gorge-320",
+"start": 0,
+"end": 3,
+"frameRate": 8
+},
+{
+"key": "tr-gorge-260",
+"texture": "tr-gorge-260",
+"start": 0,
+"end": 3,
+"frameRate": 8
+},
+{
+"key": "tr-gorge-280",
+"texture": "tr-gorge-280",
+"start": 0,
+"end": 3,
+"frameRate": 8
+}
+]
+}

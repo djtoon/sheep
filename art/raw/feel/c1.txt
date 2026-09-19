@@ -1,0 +1,2 @@
+clip shots/feel/controls.mp4 191 frames
+stats {"fps":59,"scene":["Game","HUD"],"t":15796,"player":{"x":477,"y":214,"vx":-100,"vy":0,"lives":3,"ground":true,"spin":false,"prone":false,"dead":false,"invuln":0,"aim":[-1,0],"facing":-1,"weapon":"R"},"cam":336,"enemies":3,"onscreen":3,"pShots":1,"eShots":1,"score":600,"kills":5,"shots":26,"deaths":0,"paused":false,"boss":false,"cleared":false,"flow":"play"}

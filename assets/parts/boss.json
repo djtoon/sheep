@@ -1,0 +1,141 @@
+{
+ "assets": [
+  {
+   "type": "spritesheet",
+   "key": "boss-body",
+   "url": "assets/boss/boss-body.png",
+   "frameWidth": 98,
+   "frameHeight": 146
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-door-l",
+   "url": "assets/boss/boss-door-l.png",
+   "frameWidth": 19,
+   "frameHeight": 54
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-door-r",
+   "url": "assets/boss/boss-door-r.png",
+   "frameWidth": 20,
+   "frameHeight": 54
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-launcher",
+   "url": "assets/boss/boss-launcher.png",
+   "frameWidth": 31,
+   "frameHeight": 22
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-core",
+   "url": "assets/boss/boss-core.png",
+   "frameWidth": 19,
+   "frameHeight": 19
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-saw",
+   "url": "assets/boss/boss-saw.png",
+   "frameWidth": 18,
+   "frameHeight": 18
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-shell",
+   "url": "assets/boss/boss-shell.png",
+   "frameWidth": 10,
+   "frameHeight": 14
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-chunks",
+   "url": "assets/boss/boss-chunks.png",
+   "frameWidth": 9,
+   "frameHeight": 9
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-mark",
+   "url": "assets/boss/boss-mark.png",
+   "frameWidth": 21,
+   "frameHeight": 7
+  },
+  {
+   "type": "image",
+   "key": "boss-found",
+   "url": "assets/boss/boss-found.png"
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-gun-house",
+   "url": "assets/boss/boss-gun-house.png",
+   "frameWidth": 28,
+   "frameHeight": 24
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-gun-barrel",
+   "url": "assets/boss/boss-gun-barrel.png",
+   "frameWidth": 56,
+   "frameHeight": 56
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-lamp",
+   "url": "assets/boss/boss-lamp.png",
+   "frameWidth": 7,
+   "frameHeight": 7
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-gun-low",
+   "url": "assets/boss/boss-gun-low.png",
+   "frameWidth": 28,
+   "frameHeight": 36
+  },
+  {
+   "type": "spritesheet",
+   "key": "boss-tink",
+   "url": "assets/boss/boss-tink.png",
+   "frameWidth": 7,
+   "frameHeight": 7
+  }
+ ],
+ "anims": [
+  {
+   "key": "boss-saw-spin",
+   "texture": "boss-saw",
+   "start": 0,
+   "end": 3,
+   "frameRate": 24,
+   "repeat": -1
+  },
+  {
+   "key": "boss-shell-blink",
+   "texture": "boss-shell",
+   "start": 0,
+   "end": 1,
+   "frameRate": 10,
+   "repeat": -1
+  },
+  {
+   "key": "boss-mark-blink",
+   "texture": "boss-mark",
+   "start": 0,
+   "end": 1,
+   "frameRate": 8,
+   "repeat": -1
+  },
+  {
+   "key": "boss-tink",
+   "texture": "boss-tink",
+   "start": 0,
+   "end": 2,
+   "frameRate": 30,
+   "repeat": 0
+  }
+ ]
+}
